@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entities>
+    <entity name="net.codjo.mad.server.data.Dummy">
+        <feature>
+            <handler-sql id="dummyGenerated">
+                <query>deprecated</query>
+            </handler-sql>
+        </feature>
+    </entity>
+</entities>

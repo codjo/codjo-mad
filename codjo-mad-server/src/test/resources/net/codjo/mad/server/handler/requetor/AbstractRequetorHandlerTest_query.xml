@@ -1,0 +1,15 @@
+<requests>
+    <audit>
+        <user>roses</user>
+    </audit>
+    <select request_id="1">
+        <id>me</id>
+        <selector>
+            <field name="sqlQuery">SELECT PERIOD from #AP_OUTSTAND</field>
+        </selector>
+        <attributes>
+            <name>period</name>
+        </attributes>
+        <page num="1" rows="1000"/>
+    </select>
+</requests>

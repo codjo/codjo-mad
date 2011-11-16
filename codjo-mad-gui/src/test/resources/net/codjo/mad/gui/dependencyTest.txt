@@ -1,0 +1,179 @@
+net.codjo.mad.gui
+	-> net.codjo.i18n.common
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.util
+
+net.codjo.mad.gui.base
+	-> net.codjo.mad.gui
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.agent
+	-> net.codjo.agent.test
+	-> net.codjo.gui.toolkit.progressbar
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.util
+	-> net.codjo.plugin.common
+	-> net.codjo.plugin.gui
+	-> net.codjo.security.common.api
+	-> net.codjo.test.common
+	-> org.picocontainer
+	-> org.picocontainer.defaults
+	-> org.uispec4j
+	-> org.uispec4j.assertion
+	-> org.uispec4j.interception
+	-> org.uispec4j.utils
+
+net.codjo.mad.gui.framework
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.security.common.api
+	-> org.uispec4j
+	-> org.uispec4j.assertion
+
+net.codjo.mad.gui.i18n
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.util
+
+net.codjo.mad.gui.menu
+	-> net.codjo.i18n.common
+	-> net.codjo.mad.gui
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+
+net.codjo.mad.gui.plugin
+	-> net.codjo.plugin.gui
+	-> net.codjo.agent
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.gui.base
+	-> net.codjo.mad.gui.request
+	-> org.xml.sax
+
+net.codjo.mad.gui.request
+	-> net.codjo.gui.toolkit.number
+	-> net.codjo.gui.toolkit.swing
+	-> net.codjo.gui.toolkit.table
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.client.request.util
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui
+	-> net.codjo.mad.gui.base
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.request.action
+	-> net.codjo.mad.gui.request.archive
+	-> net.codjo.mad.gui.request.event
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.request.requetor
+	-> net.codjo.mad.gui.request.util
+	-> net.codjo.mad.gui.request.util.comparators
+	-> net.codjo.security.common.api
+	-> net.codjo.test.common
+	-> junit.extensions.jfcunit
+	-> junit.extensions.jfcunit.eventdata
+	-> org.uispec4j
+	-> org.uispec4j.assertion
+	-> org.uispec4j.interception
+	-> org.uispec4j.utils
+	-> org.xml.sax
+
+net.codjo.mad.gui.request.action
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.client.request.util
+	-> net.codjo.mad.gui
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.security.common.api
+	-> net.codjo.test.common
+	-> org.uispec4j
+	-> org.uispec4j.finder
+	-> org.uispec4j.interception
+
+net.codjo.mad.gui.request.archive
+	-> net.codjo.mad.client.request
+
+net.codjo.mad.gui.request.event
+
+net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.client.request
+	-> net.codjo.test.common
+
+net.codjo.mad.gui.request.requetor
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.security.common.api
+	-> org.xml.sax
+
+net.codjo.mad.gui.request.undo
+	-> org.easymock
+
+net.codjo.mad.gui.request.util
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.archive
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.request.undo
+	-> net.codjo.security.common.api
+	-> net.codjo.test.common
+	-> org.mockito
+	-> org.mockito.internal.progress
+	-> org.uispec4j
+
+net.codjo.mad.gui.request.util.comparators
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.util.editors
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui
+	-> net.codjo.mad.gui.request
+	-> net.codjo.security.common.api
+	-> org.uispec4j
+	-> org.xml.sax
+
+net.codjo.mad.gui.request.util.renderers
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.util.selection
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.wrapper
+	-> net.codjo.gui.toolkit
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.gui.toolkit.number
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.util
+	-> org.uispec4j
+
+net.codjo.mad.gui.util
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.gui.toolkit.table
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.test.common
+	-> net.codjo.test.common.excel
+	-> org.apache.poi.hssf.usermodel
+	-> org.uispec4j
+	-> org.uispec4j.utils
+	-> org.xml.sax

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<structure>
+    <table type="quarantine" label="Mon dividend a moi" name="Dividend" sql="Q_AP_DIVIDEND">
+        <field label="Code portefeuille du coupon" name="portfolioCode" sql="PORTFOLIO_CODE"
+               sql-type="varchar" sql-precision="6" sql-required="true" referential="Person"
+               sql-primary-key="true" functional-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" sql-precision="17,2"
+               sql-required="true" referential="Referential"/>
+        <field label="DIVIDEND_DATE" name="dividendDate" sql="DIVIDEND_DATE" sql-type="timestamp"
+               sql-required="true" functional-key="true"/>
+        <field label="AUTOMATIC_UPDATE" name="automaticUpdate" sql="AUTOMATIC_UPDATE" sql-type="bit"
+               sql-required="true"/>
+        <field label="Commentaire de fiche" name="comment" sql="COMMENT" sql-type="varchar" sql-precision="6"
+               referential="Referential"/>
+        <field label="CREATED_BY" name="createdBy" sql="CREATED_BY" sql-type="varchar" sql-precision="6"/>
+    </table>
+    <table type="quarantine" label="Q_AP_TOTO" name="Toto" sql="Q_AP_TOTO">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-type="varchar" sql-precision="6"
+               sql-required="true" sql-primary-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" sql-type="numeric"
+               sql-precision="17,2" sql-required="true"/>
+
+    </table>
+    <table type="data" label="la table a BOBO" name="Bobo" sql="BOBO">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-primary-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" referential="Referential"
+               sql-type="NUMERIC"/>
+    </table>
+    <table type="data" label="la table a BOBO 2" name="Bobo2" sql="BOBO2">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-primary-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" sql-type="timestamp"
+               sql-precision="17,2" sql-required="true" referential="Referential"/>
+    </table>
+    <!--bobo3 etend bobo2-->
+    <table type="data" label="la table a BOBO 3 herite de BOBO2" name="Bobo3" sql="BOBO2">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-primary-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" sql-type="timestamp"
+               sql-precision="17,2" sql-required="true" referential="Referential"/>
+    </table>
+    <table type="data" label="table de types SQL" name="SqlTypes" sql="SQL_TYPES">
+        <field sql="TYPE_1" sql-type="timestamp"/>
+        <field sql="TYPE_2" sql-type="numeric"/>
+        <field sql="TYPE_3" sql-type="varchar"/>
+        <field sql="TYPE_4" sql-type="longvarchar"/>
+        <field sql="TYPE_5" sql-type="integer"/>
+        <field sql="TYPE_6" sql-type="bit"/>
+    </table>
+</structure>

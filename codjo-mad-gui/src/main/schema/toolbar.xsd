@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <xs:annotation>
+        <xs:appinfo>Schema XML pour la toolbar principale</xs:appinfo>
+        <xs:documentation xml:lang="fr">
+            Ce schéma définit le format des fichiers XML permettant de décrire la
+            toolbar de la fenêtre principale de l'application.
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- ==================== ROOT ELEMENT ==================== -->
+    <xs:element name="toolbar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="component" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="borderPainted" type="xs:boolean"/>
+            <xs:attribute name="floatable" type="xs:boolean"/>
+            <xs:attribute name="iconOnly" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================== 1nd LEVEL ELEMENT ==================== -->
+    <xs:element name="component">
+        <xs:complexType>
+            <xs:attribute name="separator" type="xs:boolean" />
+            <xs:attribute name="action" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Identifiant de l'action.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="hideWhenNotAllowed" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Permet de masquer le bouton correspondant à une action
+                        selon les droits utilisateurs.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="plugin" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Identifiant d'un plugin.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="actionId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Identifiant d'une action associé à un plugin.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+        <xs:key name="componentType">
+            <xs:selector xpath="."/>
+            <xs:field xpath="@separator|@action|@plugin" />
+        </xs:key>
+    </xs:element>
+
+</xs:schema>

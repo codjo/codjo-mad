@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<structure>
+    <table type="data" label="Emetteur" name="Issuer" sql="AP_ISSUER">
+        <field label="id" name="id" sql="ID" sql-type="VARCHAR"/>
+        <field label="Code" name="issuerCode" sql="ISSUER_CODE" sql-type="VARCHAR"/>
+    </table>
+    <table type="data" label="Emetteur Secteur" name="IssuerSector" sql="AP_ISSUER_RATINGS_SECTOR">
+        <field label="id" name="issuerId" sql="ISSUER_ID" sql-type="VARCHAR"/>
+        <field label="Code" name="issuerCode" sql="ISSUER_CODE" sql-type="VARCHAR"/>
+        <field label="Libellé" name="issuerLabel" sql="ISSUER_LABEL" sql-type="VARCHAR"/>
+        <field label="Date de début" name="dateBegin" sql="DATE_BEGIN" sql-type="DATE"/>
+    </table>
+    <table type="data" label="Emetteur Rating" name="IssuerRatings" sql="AP_ISSUER_RATINGS">
+        <field label="Code" name="issuerCode" sql="ISSUER_CODE" sql-type="VARCHAR"/>
+        <field label="Quantité" name="quantity" sql="QUANTITY" sql-type="NUMERIC"/>
+    </table>
+    <table type="data" label="Emetteur lié" name="IssuerLink" sql="AP_ISSUER_LINK">
+        <field label="Code" name="issuerCode" sql="ISSUER_CODE" sql-type="VARCHAR"/>
+    </table>
+    <table type="data" label="Mechante" name="bad" sql="BAD"/>
+    <table type="data" label="Part de gateau" name="CakeShareLink" sql="AP_CAKE_SHARE">
+        <field label="Code sponsor" name="shareSponsorCode" sql="SHARE_SPONSOR_CODE" sql-type="VARCHAR"/>
+        <field label="Code manager" name="shareManagerCode" sql="SHARE_MANAGER_CODE" sql-type="VARCHAR"/>
+        <field label="Date de .." name="shareManagerDate" sql="SHARE_MANAGER_DATE" sql-type="DATE"/>
+    </table>
+    <table type="data" label="Personne" name="PersonLink" sql="REF_PERSON">
+        <field label="Code person" name="personCode" sql="PERSON_CODE" sql-type="VARCHAR"/>
+    </table>
+</structure>

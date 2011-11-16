@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<link-def>
+    <links id="Issuer" root="AP_ISSUER">
+        <link from="AP_ISSUER" to="AP_ISSUER_RATINGS_SECTOR">
+            <key from="ISSUER_CODE" to="ISSUER_CODE"/>
+            <key from="ID" to="ISSUER_ID"/>
+        </link>
+        <link from="AP_ISSUER" to="AP_ISSUER_RATINGS" type="inner join">
+            <key from="ISSUER_CODE" operator="=" to="ISSUER_CODE"/>
+        </link>
+        <link from="AP_ISSUER" to="AP_ISSUER_LINK">
+            <key from="ISSUER_CODE" to="ISSUER_CODE"/>
+        </link>
+    </links>
+    <links id="CakeShareWithAlias" root="AP_CAKE_SHARE">
+        <link from="AP_CAKE_SHARE" to="REF_PERSON as sponsor" type="inner join">
+            <key from="SHARE_SPONSOR_CODE" operator="=" to="PERSON_CODE"/>
+        </link>
+        <link from="AP_CAKE_SHARE" to="REF_PERSON as manager" type="inner join">
+            <key from="SHARE_MANAGER_CODE" operator="=" to="PERSON_CODE"/>
+        </link>
+    </links>
+</link-def>

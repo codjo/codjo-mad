@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<roles>
+    <role id="consultation">
+        <include>select*</include>
+    </role>
+
+    <role id="administration_vl">
+        <include>*FundPrice*</include>
+        <include>PortFolioCodification*</include>
+        <exclude>selectAllTruc</exclude>
+    </role>
+</roles>

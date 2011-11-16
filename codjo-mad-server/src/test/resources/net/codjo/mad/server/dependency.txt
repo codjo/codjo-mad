@@ -1,0 +1,92 @@
+net.codjo.mad.server
+	-> net.codjo.security.common.api
+	-> org.exolab.castor.jdo
+
+net.codjo.mad.server.handler
+	-> net.codjo.agent
+	-> net.codjo.sql.server
+	-> com.thoughtworks.xstream
+	-> com.thoughtworks.xstream.converters
+	-> com.thoughtworks.xstream.converters.collections
+	-> com.thoughtworks.xstream.core
+	-> com.thoughtworks.xstream.io
+	-> com.thoughtworks.xstream.io.xml
+	-> com.thoughtworks.xstream.mapper
+	-> net.codjo.mad.server.plugin
+	-> net.codjo.aspect
+	-> net.codjo.aspect.util
+	-> net.codjo.database.api.query
+	-> net.codjo.mad.common
+	-> net.codjo.mad.server
+	-> net.codjo.mad.server.handler.aspect
+	-> net.codjo.mad.server.util
+	-> net.codjo.reflect.collect
+	-> net.codjo.security.common.api
+	-> org.exolab.castor.jdo
+	-> org.picocontainer
+	-> org.picocontainer.defaults
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.aspect
+	-> net.codjo.aspect
+	-> net.codjo.mad.server.handler
+	-> net.codjo.reflect.util
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.requetor
+	-> net.codjo.database.api
+	-> net.codjo.database.api.query
+	-> net.codjo.mad.server.handler
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.select
+	-> net.codjo.database.api
+	-> net.codjo.database.api.query
+	-> net.codjo.mad.server.handler
+	-> org.exolab.castor.jdo
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.sql
+	-> net.codjo.database.api
+	-> net.codjo.database.api.query
+	-> net.codjo.mad.server.handler
+	-> net.codjo.mad.server.handler.util
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.plugin
+	-> net.codjo.aspect
+	-> net.codjo.agent
+	-> net.codjo.agent.behaviour
+	-> net.codjo.agent.protocol
+	-> net.codjo.agent.util
+	-> net.codjo.mad.common
+	-> net.codjo.mad.server
+	-> net.codjo.mad.server.handler
+	-> net.codjo.mad.server.structure
+	-> net.codjo.mad.server.util
+	-> net.codjo.plugin.common
+	-> net.codjo.plugin.common.session
+	-> net.codjo.plugin.server
+	-> net.codjo.security.common.api
+	-> net.codjo.security.server.api
+	-> net.codjo.sql.server
+	-> org.exolab.castor.jdo
+	-> org.exolab.castor.jdo.engine
+	-> org.picocontainer
+
+net.codjo.mad.server.structure
+	-> net.codjo.mad.common
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.server.handler
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.util
+	-> org.exolab.castor.jdo
+	-> org.exolab.castor.persist
+	-> org.exolab.castor.persist.spi

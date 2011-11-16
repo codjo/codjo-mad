@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<structure>
+    <table type="data" label="la table de data" name="tableData" sql="TABLE_DATA">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-type="varchar"
+               sql-precision="6" sql-required="true"/>
+        <field label="Code ISIN" name="isin" sql="ISIN" sql-type="varchar" sql-precision="10"
+               sql-required="true"/>
+        <field label="Sensi" name="sensi" sql="SENSI" sql-type="numeric" sql-precision="5,3"/>
+        <field label="Alcatel" name="alcatel" sql="ALCATEL" sql-type="integer"/>
+        <field label="Bnp" name="bnp" sql="BNP" sql-type="numeric" sql-precision="5,0"/>
+    </table>
+</structure>

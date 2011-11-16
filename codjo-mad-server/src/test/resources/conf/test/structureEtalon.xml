@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<structure>
+    <table label="la table a ALONE" name="ALONE" sql="ALONE" type="data">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-required="false"
+               sql-primary-key="false" functional-key="false"/>
+    </table>
+    <table label="Q_AP_TOTO" name="Toto" sql="Q_AP_TOTO" type="quarantine">
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" sql-required="false"
+               sql-primary-key="false" functional-key="false"/>
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-required="false"
+               sql-primary-key="false" functional-key="true"/>
+    </table>
+    <table label="la table a BOBO" name="Bobo" sql="BOBO" type="data">
+        <field label="NET_DIVIDEND" name="netDividend" referential="Referential" sql="NET_DIVIDEND"
+               sql-type="NUMERIC" sql-required="false" sql-primary-key="false" functional-key="false"/>
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" sql-required="false"
+               sql-primary-key="false" functional-key="false"/>
+    </table>
+</structure>

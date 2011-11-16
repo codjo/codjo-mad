@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+                         "http://castor.exolab.org/mapping.dtd">
+<mapping>
+    <!-- Definition Field (différente de classesMapping) -->
+    <class name="net.codjo.mad.client.request.Field">
+        <field name="name" type="java.lang.String">
+            <bind-xml name="name" node="attribute"/>
+        </field>
+        <field name="value" type="java.lang.String">
+            <bind-xml node="text"/>
+        </field>
+    </class>
+
+    <class name="net.codjo.mad.client.request.FieldsList">
+        <field name="fields"
+            type="net.codjo.mad.client.request.Field"
+            collection="collection">
+            <bind-xml name="field" node="element"/>
+        </field>
+    </class>
+
+    <!-- Definition ResultManager -->
+    <class name="net.codjo.mad.client.request.ResultManager">
+        <map-to xml="results"/>
+        <field name="errorResult"
+            type="net.codjo.mad.client.request.ErrorResult">
+            <bind-xml name="error" node="element"/>
+        </field>
+
+        <field name="results"
+            type="net.codjo.mad.client.request.Result"
+            collection="collection">
+            <bind-xml name="result" node="element"/>
+        </field>
+    </class>
+
+    <!-- Definition ErrorResult -->
+    <class name="net.codjo.mad.client.request.ErrorResult">
+        <field name="requestId"
+            type="java.lang.String">
+            <bind-xml name="request_id" node="attribute"/>
+        </field>
+        <field name="label"
+            type="java.lang.String">
+            <bind-xml name="label" node="element"/>
+        </field>
+        <field name="type"
+            type="java.lang.String">
+            <bind-xml name="type" node="element"/>
+        </field>
+    </class>
+
+    <!-- Definition Result -->
+    <class name="net.codjo.mad.client.request.Result">
+        <field name="requestId"
+            type="java.lang.String">
+            <bind-xml name="request_id" node="attribute"/>
+        </field>
+        <field name="totalRowCount"
+            type="integer">
+            <bind-xml name="totalRowCount" node="attribute"/>
+        </field>
+        <field name="primaryKeys"
+            type="net.codjo.mad.client.request.FieldsList">
+            <bind-xml name="primarykey" node="element"/>
+        </field>
+        <field name="rows"
+            type="net.codjo.mad.client.request.Row"
+            collection="collection">
+            <bind-xml name="row" node="element"/>
+        </field>
+    </class>
+
+    <!-- Definition Row -->
+    <class name="net.codjo.mad.client.request.Row">
+        <field name="fields"
+            type="net.codjo.mad.client.request.Field"
+            collection="collection">
+            <bind-xml name="field" node="element"/>
+        </field>
+    </class>
+</mapping>

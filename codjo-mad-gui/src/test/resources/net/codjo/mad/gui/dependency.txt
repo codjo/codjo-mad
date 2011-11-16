@@ -1,0 +1,201 @@
+net.codjo.mad.gui.base
+	-> net.codjo.agent
+	-> net.codjo.gui.toolkit
+	-> net.codjo.gui.toolkit.progressbar
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.gui.toolkit.windowMenu
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.menu
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.action
+	-> net.codjo.mad.gui.structure
+	-> net.codjo.mad.gui.util
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.plugin.common
+	-> net.codjo.plugin.gui
+	-> net.codjo.security.common.api
+	-> net.codjo.i18n.gui.plugin
+    -> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> com.jgoodies.looks.plastic
+	-> com.jgoodies.looks.plastic.theme
+	-> org.picocontainer
+
+net.codjo.mad.gui.framework
+	-> net.codjo.gui.toolkit
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.gui.toolkit.progressbar
+	-> net.codjo.gui.toolkit.swing
+	-> net.codjo.gui.toolkit.text
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.gui.toolkit.waiting
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.request.util
+	-> net.codjo.mad.gui.request.wrapper
+	-> net.codjo.security.common.api
+
+net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.base
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.plugin.gui
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.menu
+	-> net.codjo.i18n.gui
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.xml
+	-> net.codjo.xml.easyxml
+
+net.codjo.mad.gui.plugin
+	-> net.codjo.i18n.common
+	-> net.codjo.plugin.gui
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.gui.base
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.requetor
+	-> org.xml.sax
+
+net.codjo.mad.gui.request
+	-> net.codjo.gui.toolkit.combo
+	-> net.codjo.gui.toolkit.number
+	-> net.codjo.gui.toolkit.readonly
+	-> net.codjo.gui.toolkit.swing
+	-> net.codjo.gui.toolkit.table
+	-> net.codjo.gui.toolkit.text
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.request.action
+	-> net.codjo.mad.gui.request.event
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.request.requetor
+	-> net.codjo.mad.gui.request.undo
+	-> net.codjo.mad.gui.request.util
+	-> net.codjo.mad.gui.request.util.comparators
+	-> net.codjo.mad.gui.request.wrapper
+	-> net.codjo.mad.gui.structure
+	-> net.codjo.security.common.api
+	-> org.jdesktop.swingx.autocomplete
+	-> org.jdesktop.swingx.autocomplete.workarounds
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.gui.request.action
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.event
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.request.util
+	-> net.codjo.mad.gui.util
+	-> net.codjo.security.common.api
+	-> org.picocontainer
+	-> org.picocontainer.defaults
+
+net.codjo.mad.gui.request.archive
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.event
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.util
+
+net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.requetor
+	-> net.codjo.gui.toolkit.calendar
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.gui.toolkit.fileChooser
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.gui.toolkit.waiting
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.action
+	-> net.codjo.mad.gui.request.factory
+	-> net.codjo.mad.gui.structure
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.gui.request.undo
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.event
+	-> net.codjo.mad.gui.request.wrapper
+
+net.codjo.mad.gui.request.util
+	-> net.codjo.gui.toolkit.table
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.mad.client.plugin
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.archive
+	-> net.codjo.mad.gui.request.event
+	-> net.codjo.mad.gui.request.undo
+	-> net.codjo.mad.gui.request.util.comparators
+	-> net.codjo.mad.gui.request.wrapper
+
+net.codjo.mad.gui.request.util.comparators
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.util.editors
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.util.renderers
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.request.util.selection
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> net.codjo.mad.gui.request.action
+	-> net.codjo.mad.gui.request.util
+
+net.codjo.mad.gui.request.wrapper
+	-> net.codjo.gui.toolkit
+	-> net.codjo.gui.toolkit.date
+	-> net.codjo.gui.toolkit.number
+	-> net.codjo.gui.toolkit.path
+	-> net.codjo.mad.gui.request
+
+net.codjo.mad.gui.structure
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common.structure
+	-> net.codjo.mad.gui.request.util
+	-> org.xml.sax
+
+net.codjo.mad.gui.util
+	-> net.codjo.gui.toolkit.table
+	-> net.codjo.gui.toolkit.util
+	-> net.codjo.mad.client.request
+	-> net.codjo.mad.common
+	-> net.codjo.mad.gui.framework
+	-> net.codjo.mad.gui.request
+	-> org.apache.poi.hssf.usermodel

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<menubar>
+    <menu>
+        <name>net.codjo.mad.gui.menu.File</name>
+        <menu action="net.codjo.mad.gui.menu.MenuFactoryTest$MonAction"/>
+        <menu separator="true"/>
+        <menu>
+            <name>net.codjo.mad.gui.menu.Settings</name>
+            <menu action="net.codjo.mad.gui.menu.MenuFactoryTest$MonAction"/>
+        </menu>
+    </menu>
+    <menu>
+        <name>net.codjo.mad.gui.menu.Empty</name>
+    </menu>
+    <menu>
+        <name>net.codjo.mad.gui.menu.FromPlugins</name>
+        <menu plugin="net.codjo.mad.gui.menu.MenuFactoryTest" actionId="MiAccion"/>        
+    </menu>
+</menubar>

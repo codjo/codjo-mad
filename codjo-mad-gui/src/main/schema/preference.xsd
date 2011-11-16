@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <xs:annotation>
+        <xs:appinfo>Schema XML des preferences</xs:appinfo>
+        <xs:documentation xml:lang="fr">
+            Ce schéma définit le format des fichiers XML permettant de décrire les
+            préférences.
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- ==================== ROOT ELEMENT ==================== -->
+    <xs:element name="preferenceList">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Element racine d'une liste de préférence.
+                Ajouter les attributs
+                'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="preference.xsd" ' dans le fichier XML
+                pour le lier a ce schema.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="preference" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================== 1nd LEVEL ELEMENT ==================== -->
+    <xs:element name="preference">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">Permet de définir une
+                préférence.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="entity"/>
+                <xs:element ref="selectAll"/>
+                <xs:element ref="selectByPk"/>
+                <xs:element ref="update"/>
+                <xs:element ref="delete"/>
+                <xs:element ref="insert"/>
+                <xs:element ref="requetor"/>
+                <xs:element ref="column"/>
+                <xs:element ref="hidden"/>
+            </xs:choice>
+            <xs:attribute name="id" use="required" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Identifiant de la
+                        préférence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="detailWindowClassName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Nom complet de la classe de la fenêtre
+                        de détail.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================== 2nd LEVEL ELEMENTS ==================== -->
+    <xs:element name="entity" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant de l'entity sur laquelle pointe la liste.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="selectAll" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler de sélection de la toutes les instances.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="selectByPk" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler de sélection d'une instance.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="update" type="typeAttribute">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler de mise à jour d'une instance.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="delete" type="typeAttribute">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler de suppression d'une instance.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="insert" type="typeAttribute">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler d'insertion d'une nouvelle instance.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="requetor" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">
+                Identifiant du handler utilisé par le requetor.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="column">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">Définition d'une colonne.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="fieldName" use="required" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Nom du champ</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="label" use="required" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Libellé affiché</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="minSize" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Largeur ninimum</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="maxSize" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Largeur maximum</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="preferredSize" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Largeur préférée</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="format" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Format affiché : Numeric(pattern),
+                        Date(pattern), Boolean(pattern), String
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="sorter" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Définition du tri : Numeric,
+                        Date(pattern), Boolean, classe spécifique
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="renderer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Définition d'une classe de renderer
+                        spécfique.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="summable" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation xml:lang="fr">Indique si la colonne nécessite d'afficher un total
+                        (total = somme des valeurs contenues dans la colonne)
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hidden">
+        <xs:annotation>
+            <xs:documentation xml:lang="fr">Définition des colonnes non
+                affichées.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="column" maxOccurs="unbounded" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="fr">Définition d'une colonne non
+                            affichée.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="fieldName" use="required" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Nom du
+                                    champ
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="label" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Libellé affiché</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="minSize" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Largeur ninimum</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="maxSize" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Largeur maximum</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="preferredSize" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Largeur préférée</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="format" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Format affiché : Numeric(pattern),
+                                    Date(pattern), Boolean(pattern), String
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="sorter" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Définition du tri : Numeric,
+                                    Date(pattern), Boolean, classe spécifique
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="renderer" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Définition d'une classe de renderer
+                                    spécfique.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="summable" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Indique si la colonne nécessite d'afficher un
+                                    total
+                                    (total = somme des valeurs contenues dans la colonne)
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="summableLabel" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="fr">Libellé affiché dans la colone de la ligne
+                                    total. Ne peut être utilisé en même temps que l'attribut summable!
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="typeAttribute">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="type" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

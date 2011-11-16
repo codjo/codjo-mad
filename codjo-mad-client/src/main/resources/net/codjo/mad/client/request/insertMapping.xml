@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+                         "http://castor.exolab.org/mapping.dtd">
+
+<mapping>
+    <include href="D:\Pims\ClientAPP\src\net\codjo\pims\client\request\classesMapping.xml"/>
+    <class name="net.codjo.mad.client.request.InsertRequest">
+        <!-- map-to : seulement pour la root class -->
+        <map-to xml="insert"/>
+        <field name="requestId"
+            type="java.lang.String">
+            <bind-xml name="request_id" node="attribute"/>
+        </field>
+        <field name="id"
+            type="java.lang.String">
+            <bind-xml name="id" node="element"/>
+        </field>
+        <field name="row"
+            type="net.codjo.mad.client.request.FieldsList">
+            <bind-xml name="row" node="element"/>
+        </field>
+    </class>
+
+</mapping>

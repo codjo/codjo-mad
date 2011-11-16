@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toolbar borderPainted="false" floatable="false" iconOnly="true">
+    <component action="net.codjo.mad.gui.menu.MenuFactoryTest$MonAction"/>
+    <component separator="true"/>
+    <component gui_contexte_property="un bouton"/>
+    <component action="net.codjo.mad.gui.menu.MenuFactoryTest$MonAutreAction" hideWhenNotAllowed="true"/>
+</toolbar>

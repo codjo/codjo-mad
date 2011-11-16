@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<requests>
+    <audit>
+        <user>roses</user>
+    </audit>
+    <insert request_id="2">
+        <id>newManagementCompany</id>
+        <row>
+            <field name="mgtCompanyLabel">null</field>
+            <field name="period">200405</field>
+        </row>
+    </insert>
+    <insert request_id="3">
+        <id>newNoRow</id>
+    </insert>
+    <update request_id="10">
+        <id>updateCompany</id>
+        <primarykey>
+            <field name="period">200405</field>
+        </primarykey>
+        <row>
+            <field name="label">bobo</field>
+            <field name="period">null</field>
+        </row>
+    </update>
+    <delete request_id="9">
+        <id>deleteImportSettings</id>
+        <primarykey>
+            <field name="importSettingsId">1</field>
+        </primarykey>
+    </delete>
+    <select request_id="8">
+        <id>selectByFile</id>
+        <selector>
+            <field name="importSettingsId">1</field>
+        </selector>
+        <attributes>
+            <name>position</name>
+            <name>dbDestinationFieldName</name>
+        </attributes>
+        <page num="1" rows="1000"/>
+    </select>
+    <select request_id="100">
+        <id>selectAll</id>
+        <page num="1" rows="1000"/>
+    </select>
+    <command request_id="12">
+        <id>SimpleCommand</id>
+    </command>
+    <command request_id="53">
+        <id>MyCommand</id>
+        <args>
+            <field name="period">200405</field>
+        </args>
+    </command>
+    <bad request_id="53">
+        <id>badQuery</id>
+    </bad>
+    <command request_id="12">
+        <id>2Times</id>
+    </command>
+    <command request_id="15">
+        <id>2Times</id>
+    </command>
+    <sql request_id="18">
+        <id>sqlRocks</id>
+        <selector>
+            <field name="title">Life, the universe and everything</field>
+            <field name="author">Douglas N. Adams</field>
+        </selector>
+    </sql>
+    <sql request_id="365">
+        <id>xmlForEver</id>
+        <selector>
+            <field name="title">Life, the universe and everything</field>
+            <field name="author">Douglas N. Adams</field>
+        </selector>
+        <args>
+            <field name="mostIntelligentSpecies">mice</field>
+            <field name="secondMostIntelligentSpecies">dolphins</field>
+            <field name="thirdMostIntelligentSpecies">monkeys</field>
+        </args>
+    </sql>
+</requests>

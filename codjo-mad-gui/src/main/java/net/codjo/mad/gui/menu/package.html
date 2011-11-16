@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head><!--
+  Copyright (c) 2002 - AGF [SOCIETE]
+  Tous droits réservés.
+--></head>
+
+<body bgcolor="white">Package permettant de créer facilement la barre des menus avec la toolbar associé.
+
+<hr/>
+<h2>Utilisation du package</h2>
+Lecture du fichier de paramètrage XML.
+<pre>
+    JMenuBar menuBar =
+        MenuFactory.buildMenuBar(new InputSource(maclass.getResourceAsStream("/conf/menu.xml"))
+            , menuCtxt);
+</pre>
+
+<hr/>
+<h2>Extension</h2>
+Il est possible de fournir un menu deja construit : 
+<pre>
+        menuCtxt.putProperty("Menu Fenetre", new WindowMenu(desktop));
+        ...MenuFactory.buildMenuBar...
+</pre>
+
+<hr/>
+<h2>Résumé des classes</h2>
+
+N/A
+</body>
+</html>

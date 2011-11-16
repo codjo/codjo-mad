@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<structure>
+    <table type="quarantine" label="Q_AP_TOTO" name="Toto" sql="Q_AP_TOTO">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO" functional-key="true"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND"/>
+    </table>
+    <table type="data" label="la table a BOBO" name="Bobo" sql="BOBO">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO"/>
+        <field label="NET_DIVIDEND" name="netDividend" sql="NET_DIVIDEND" referential="Referential"
+               sql-type="NUMERIC"/>
+    </table>
+    <table type="data" label="la table a ALONE" name="ALONE" sql="ALONE">
+        <field label="Code portefeuille" name="portfolio" sql="PORTFOLIO"/>
+    </table>
+</structure>

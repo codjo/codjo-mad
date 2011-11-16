@@ -1,0 +1,99 @@
+net.codjo.mad.server
+	-> net.codjo.agent
+	-> net.codjo.security.common.api
+	-> net.codjo.security.server.api
+	-> net.codjo.test.common
+	-> net.codjo.test.common.mock
+	-> org.exolab.castor.jdo
+
+net.codjo.mad.server.handler
+	-> net.codjo.agent
+	-> net.codjo.aspect.util
+	-> net.codjo.sql.server
+	-> net.codjo.test.common.mock
+	-> org.exolab.castor.jdo
+	-> net.codjo.mad.server.plugin
+	-> net.codjo.aspect
+	-> net.codjo.database.common.api
+	-> net.codjo.mad.common
+	-> net.codjo.mad.server
+	-> net.codjo.mad.server.handler.aspect
+	-> net.codjo.security.common.api
+	-> net.codjo.security.server.api
+	-> net.codjo.test.common
+	-> net.codjo.test.common.matcher
+	-> net.codjo.tokio
+	-> org.picocontainer
+	-> org.picocontainer.defaults
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.aspect
+	-> net.codjo.aspect
+	-> net.codjo.mad.server.handler
+	-> net.codjo.tokio
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.requetor
+	-> net.codjo.database.api
+	-> net.codjo.database.common.api
+	-> net.codjo.mad.server.handler
+	-> net.codjo.mad.server.util
+	-> net.codjo.test.common
+	-> org.apache.xpath
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.select
+	-> org.mockito
+
+net.codjo.mad.server.handler.sql
+	-> net.codjo.database.api
+	-> net.codjo.database.api.query
+	-> net.codjo.database.common.api
+	-> net.codjo.database.common.api.structure
+	-> net.codjo.mad.server
+	-> net.codjo.mad.server.handler
+	-> net.codjo.mad.server.util
+	-> net.codjo.security.common.api
+	-> net.codjo.security.server.api
+	-> net.codjo.test.common
+	-> org.w3c.dom
+	-> org.xml.sax
+
+net.codjo.mad.server.handler.util
+	-> net.codjo.test.common.matcher
+
+net.codjo.mad.server.plugin
+	-> net.codjo.agent
+	-> net.codjo.agent.test
+	-> net.codjo.aspect
+	-> net.codjo.mad.common
+	-> net.codjo.mad.server
+	-> net.codjo.mad.server.handler
+	-> net.codjo.mad.server.handler.sql
+	-> net.codjo.mad.server.util
+	-> net.codjo.mad.server.structure
+	-> net.codjo.plugin.common.session
+	-> net.codjo.security.common.api
+	-> net.codjo.security.server.api
+	-> net.codjo.sql.server
+	-> net.codjo.test.common
+	-> net.codjo.test.common.matcher
+	-> net.codjo.test.common.mock
+	-> org.exolab.castor.jdo
+	-> org.exolab.castor.jdo.engine
+	-> org.picocontainer.defaults
+
+net.codjo.mad.server.structure
+	-> net.codjo.mad.server.handler
+	-> net.codjo.test.common
+	-> net.codjo.util.file
+
+net.codjo.mad.server.util
+	-> net.codjo.test.common
+	-> net.codjo.test.common.mock
+	-> org.exolab.castor.jdo
+	-> org.exolab.castor.persist
+	-> org.exolab.castor.persist.spi

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<digester-rules>
+    <pattern value="menubar">
+        <object-create-rule classname="net.codjo.mad.gui.menu.MenuBarBuilder"/>
+        <set-properties-rule/>
+    </pattern>
+    <pattern value="*/menu">
+        <object-create-rule classname="net.codjo.mad.gui.menu.MenuBuilder"/>
+        <call-method-rule pattern="name" methodname="setName" paramcount="0"/>
+        <set-properties-rule>
+            <alias attr-name="gui_contexte_property" prop-name="actionId"/>
+        </set-properties-rule>
+        <set-next-rule methodname="addMenuBar"/>
+    </pattern>
+</digester-rules>

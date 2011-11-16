@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+                         "http://castor.exolab.org/mapping.dtd">
+
+<mapping>
+    <class name="net.codjo.mad.client.request.FieldsList">
+        <field name="fields"
+            type="net.codjo.mad.client.request.Field"
+            collection="collection">
+            <bind-xml name="field" node="element"/>
+        </field>
+    </class>
+
+    <class name="net.codjo.mad.client.request.Field">
+        <field name="name"
+            type="java.lang.String">
+            <bind-xml name="name" node="attribute"/>
+        </field>
+        <field name="value"
+            type="java.lang.String">
+            <bind-xml node="text"/>
+        </field>
+    </class>
+
+    <class name="net.codjo.mad.client.request.SimpleListElement">
+        <field name="value"
+            type="java.lang.String"
+            collection="collection">
+            <bind-xml name="name" node="element"/>
+        </field>
+    </class>
+
+</mapping>
