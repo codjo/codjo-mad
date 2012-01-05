@@ -173,7 +173,7 @@ public class FilterPanel extends JPanel {
     }
 
 
-    private boolean isRunning() {
+    public boolean isRunning() {
         return filteringMutex || (null != getWaitingPanel() && getWaitingPanel().isShowing());
     }
 
