@@ -95,5 +95,3 @@ net.codjo.mad.server.util
 	-> net.codjo.test.common
 	-> net.codjo.test.common.mock
 	-> org.exolab.castor.jdo
-	-> org.exolab.castor.persist
-	-> org.exolab.castor.persist.spi
