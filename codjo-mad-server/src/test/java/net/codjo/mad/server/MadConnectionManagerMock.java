@@ -15,8 +15,8 @@ public class MadConnectionManagerMock implements MadConnectionManager {
 
 
     public MadConnectionManagerMock() {
-        connectionMock = new ConnectionMock();
-        txConnectionMock = new ConnectionMock();
+        connectionMock = new ConnectionMock().getStub();
+        txConnectionMock = new ConnectionMock().getStub();
     }
 
 

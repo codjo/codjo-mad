@@ -172,7 +172,7 @@ public class AgentMadRequestContextTest extends TestCase {
         public Database getDatabase()
               throws PersistenceException {
             logString.call("getDatabase");
-            return new DatabaseMock(new LogString("database", logString));
+            return new DatabaseMock(new LogString("database", logString)).getStub();
         }
     }
 }

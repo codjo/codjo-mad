@@ -33,7 +33,7 @@ public class ConnectionDecoratorTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         log = new LogString();
-        connection = new ConnectionMockJDK14(log);
+        connection = new ConnectionMockJDK14(log).getStub();
         decorator = new ConnectionDecorator(connection);
     }
 
