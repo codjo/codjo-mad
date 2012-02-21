@@ -4,10 +4,10 @@
  * Copyright (c) 2001 AGF Asset Management.
  */
 package net.codjo.mad.server.util;
+import junit.framework.TestCase;
 import net.codjo.test.common.LogCallAssert;
 import net.codjo.test.common.LogString;
 import net.codjo.test.common.mock.DatabaseMock;
-import junit.framework.TestCase;
 import org.exolab.castor.jdo.Database;
 /**
  * Classe de test de {@link net.codjo.mad.server.util.DatabaseDecorator}.
@@ -15,16 +15,16 @@ import org.exolab.castor.jdo.Database;
 public class DatabaseDecoratorTest extends TestCase {
     private DatabaseDecorator decorator;
     private LogString logString;
-    private DatabaseMock database;
+    private Database databaseStub;
 
 
     public void test_getDatabase() throws Exception {
-        assertSame(database, decorator.getDatabase());
+        assertSame(databaseStub, decorator.getDatabase());
     }
 
 
     public void test_delegate() throws Exception {
-        LogCallAssert logCallAssert = new LogCallAssert(Database.class);
+        LogCallAssert<Database> logCallAssert = new LogCallAssert<Database>(Database.class);
         logCallAssert.assertCalls(decorator, logString);
     }
 
@@ -32,9 +32,9 @@ public class DatabaseDecoratorTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         logString = new LogString();
-        database = new DatabaseMock(logString);
-        decorator = new DatabaseDecorator(database) {
+        databaseStub = new DatabaseMock(logString).getStub();
+        decorator = new DatabaseDecorator(databaseStub) {
         }
-              ;
+        ;
     }
 }

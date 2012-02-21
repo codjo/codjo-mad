@@ -30,6 +30,6 @@ public class ConnectionNoCloseTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         connectionNoClose =
-              new ConnectionNoClose(new ConnectionMock(new LogString("subConnection", log)));
+              new ConnectionNoClose(new ConnectionMock(new LogString("subConnection", log)).getStub());
     }
 }

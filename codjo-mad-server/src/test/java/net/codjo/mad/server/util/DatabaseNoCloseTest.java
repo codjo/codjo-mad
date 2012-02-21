@@ -30,6 +30,6 @@ public class DatabaseNoCloseTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         databaseNoClose =
-              new DatabaseNoClose(new DatabaseMock(new LogString("database", log)));
+              new DatabaseNoClose(new DatabaseMock(new LogString("database", log)).getStub());
     }
 }

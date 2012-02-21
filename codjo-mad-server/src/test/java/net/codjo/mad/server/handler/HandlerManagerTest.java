@@ -25,8 +25,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import net.codjo.test.common.mock.ConnectionMock;
 import org.junit.Test;
 
 public class HandlerManagerTest {
@@ -109,8 +112,8 @@ public class HandlerManagerTest {
                      MyAspect.aspectContext.get(HandlerManager.MAD_TX_MANAGER));
         assertEquals(handlerContext.getUser(), MyAspect.aspectContext.get(Keys.USER_NAME));
         assertEquals(handlerContext.getUserProfil(), MyAspect.aspectContext.get(Keys.USER));
-        assertEquals(handlerContext.getTxConnection(),
-                     MyAspect.aspectContext.get(TransactionalPoint.CONNECTION));
+        assertSame(handlerContext.getTxConnection(),
+                   MyAspect.aspectContext.get(TransactionalPoint.CONNECTION));
         assertEquals("[" + handlerIdA + ", " + handlerIdB + "]",
                      toString(MyAspect.aspectContext, TransactionalPoint.ARGUMENT));
 

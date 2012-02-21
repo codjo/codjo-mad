@@ -35,6 +35,6 @@ public class ConnectionNoCloseOrTxTest extends TestCase {
     protected void setUp() throws Exception {
         log = new LogString();
         decorator =
-              new ConnectionNoCloseOrTx(new ConnectionMock(new LogString("connection", log)));
+              new ConnectionNoCloseOrTx(new ConnectionMock(new LogString("connection", log)).getStub());
     }
 }
