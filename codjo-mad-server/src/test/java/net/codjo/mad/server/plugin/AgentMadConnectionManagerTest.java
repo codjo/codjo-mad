@@ -151,7 +151,7 @@ public class AgentMadConnectionManagerTest extends TestCase {
 
         public Connection createConnection() throws SQLException {
             logString.call("createConnection");
-            return new ConnectionMock(new LogString("connection", logString));
+            return new ConnectionMock(new LogString("connection", logString)).getStub();
         }
 
 
@@ -165,7 +165,7 @@ public class AgentMadConnectionManagerTest extends TestCase {
             if (txConnectionMock != null) {
                 return txConnectionMock;
             }
-            return new ConnectionMock(new LogString("txConnection", logString));
+            return new ConnectionMock(new LogString("txConnection", logString)).getStub();
         }
 
 
@@ -179,7 +179,7 @@ public class AgentMadConnectionManagerTest extends TestCase {
             if (databaseMock != null) {
                 return databaseMock;
             }
-            return new DatabaseMock(new LogString("database", logString));
+            return new DatabaseMock(new LogString("database", logString)).getStub();
         }
 
 

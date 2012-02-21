@@ -240,7 +240,7 @@ public class AgentMadTransactionTest extends TestCase {
             public void begin() throws TransactionAbortedException {
                 throw new TransactionAbortedException(FAILURE_MESSAGE);
             }
-        });
+        }.getStub());
         connectionManager.getDatabase();
         log.clear();
 
@@ -264,7 +264,7 @@ public class AgentMadTransactionTest extends TestCase {
 
         // Get en echec ...
         builderMock.mockGetTxConnection(new DummyConnectionMock(
-              new LogString("dummy", log)));
+              new LogString("dummy", log)).getStub());
         try {
             connectionManager.getTxConnection();
             fail();
@@ -280,7 +280,7 @@ public class AgentMadTransactionTest extends TestCase {
         // La transaction peux continuer
         ConnectionMock connection =
               new ConnectionMock(new LogString("txConnection", log));
-        builderMock.mockGetTxConnection(connection);
+        builderMock.mockGetTxConnection(connection.getStub());
 
         connectionManager.getTxConnection();
     }
@@ -294,7 +294,7 @@ public class AgentMadTransactionTest extends TestCase {
                       throw new TransactionAbortedException(FAILURE_MESSAGE);
                   }
               };
-        builderMock.mockGetDatabase(databaseWithCommitFailure);
+        builderMock.mockGetDatabase(databaseWithCommitFailure.getStub());
 
         connectionManager.getDatabase();
         transaction.begin();
@@ -321,7 +321,7 @@ public class AgentMadTransactionTest extends TestCase {
                       throw new TransactionNotInProgressException(FAILURE_MESSAGE);
                   }
               };
-        builderMock.mockGetDatabase(databaseWithFailure);
+        builderMock.mockGetDatabase(databaseWithFailure.getStub());
 
         connectionManager.getDatabase();
         transaction.begin();

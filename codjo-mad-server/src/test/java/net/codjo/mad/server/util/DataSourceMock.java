@@ -19,7 +19,7 @@ public class DataSourceMock implements DataSource {
 
     public Connection getConnection() throws SQLException {
         log.call("getConnection");
-        return connectionMock;
+        return connectionMock.getStub();
     }
 
 
