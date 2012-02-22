@@ -64,6 +64,7 @@ public class InstituteAmbassadorParticipantTest extends BehaviourTestCase {
         logString.assertContent(
               String.format("declare(president, %s, %s)", AMBASSADOR_FOR_PRESIDENT, realUserId.encode()));
 
+        Thread.sleep(100);
         president.die();
 
         containerFixture.assertNotContainsAgent(AMBASSADOR_FOR_PRESIDENT);
