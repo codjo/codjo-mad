@@ -34,6 +34,7 @@
             <groupId>net.codjo.mad</groupId>
             <artifactId>codjo-mad-common</artifactId>
             <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>net.codjo.aspect</groupId>

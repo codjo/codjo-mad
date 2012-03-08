@@ -88,6 +88,7 @@
             <groupId>net.codjo.security</groupId>
             <artifactId>codjo-security-common</artifactId>
             <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>net.codjo.plugin</groupId>
