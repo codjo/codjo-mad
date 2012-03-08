@@ -52,6 +52,7 @@
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
+			<scope>runtime</scope>
         </dependency>
         <!-- Test -->
         <dependency>
