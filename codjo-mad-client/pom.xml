@@ -26,6 +26,7 @@
             <groupId>net.codjo.mad</groupId>
             <artifactId>codjo-mad-common</artifactId>
             <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>net.codjo.security</groupId>
@@ -51,6 +52,7 @@
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
+			<scope>runtime</scope>
         </dependency>
         <!-- Test -->
         <dependency>
@@ -62,6 +64,7 @@
             <groupId>net.codjo.agent</groupId>
             <artifactId>codjo-agent</artifactId>
             <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.easymock</groupId>
@@ -72,6 +75,7 @@
             <groupId>net.codjo.security</groupId>
             <artifactId>codjo-security-common</artifactId>
             <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>net.codjo.plugin</groupId>
@@ -83,7 +87,11 @@
             <classifier>tests</classifier>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <!--
