@@ -8,7 +8,7 @@
 
     <parent>
         <groupId>net.codjo.pom</groupId>
-        <artifactId>codjo-pom-library</artifactId>
+        <artifactId>codjo-pom-external</artifactId>
         <version>SNAPSHOT</version>
     </parent>
     <groupId>net.codjo.mad</groupId>
@@ -59,8 +59,7 @@
 
     <name>Lib &gt; Mad</name>
     <description>
-        Regroupement des differentes librairies permettant de faire
-        communiquer un client Swing a un Serveur
+        Swing application framework (3 tier architecture)
     </description>
     <inceptionYear>2003</inceptionYear>
 

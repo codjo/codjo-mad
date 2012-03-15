@@ -22,4 +22,11 @@ public class InternationalizationUtil {
         }
         return (TranslationManager)guiContext.getProperty(TranslationManager.TRANSLATION_MANAGER_PROPERTY);
     }
+
+
+    public static String translate(String key, GuiContext guiContext) {
+        TranslationManager translationManager = retrieveTranslationManager(guiContext);
+        TranslationNotifier translationNotifier = retrieveTranslationNotifier(guiContext);
+        return translationManager.translate(key, translationNotifier.getLanguage());
+    }
 }
