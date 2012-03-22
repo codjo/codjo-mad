@@ -1,5 +1,6 @@
 package net.codjo.mad.gui.request.action;
 import net.codjo.mad.client.plugin.MadConnectionOperationsMock;
+import net.codjo.mad.gui.MadGuiContext;
 import net.codjo.mad.gui.framework.DefaultGuiContext;
 import net.codjo.mad.gui.framework.Sender;
 import net.codjo.mad.gui.request.Mock;
@@ -70,7 +71,7 @@ public class DeleteActionTest extends UISpecTestCase {
         super.setUp();
         logString = new LogString();
 
-        DefaultGuiContext guiContext = new DefaultGuiContext();
+        DefaultGuiContext guiContext = new MadGuiContext();
         guiContext.setUser(new UserMock());
         guiContext.setSender(new Sender(new MadConnectionOperationsMock(logString)));
         RequestTable table = new RequestTable(new Mock.ListDataSource());

@@ -1,4 +1,17 @@
 package net.codjo.mad.gui.request.util;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JInternalFrame;
+import net.codjo.i18n.gui.InternationalizableContainer;
+import net.codjo.i18n.gui.TranslationNotifier;
 import net.codjo.mad.client.request.RequestException;
 import net.codjo.mad.gui.request.DataSource;
 import net.codjo.mad.gui.request.DetailDataSource;
@@ -12,17 +25,6 @@ import net.codjo.mad.gui.request.event.DataSourceEvent;
 import net.codjo.mad.gui.request.undo.DataSourceUndoManager;
 import net.codjo.mad.gui.request.undo.DataSourceUndoManagerInterface;
 import net.codjo.mad.gui.request.undo.DataSourceUndoManagerStub;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import javax.swing.JInternalFrame;
 /**
  * Logic du composant ButtonPanel.
  */
@@ -44,7 +46,7 @@ public class ButtonPanelLogic implements GuiLogic<ButtonPanelGui> {
     private String archiveId;
     private boolean closeOnSave = true;
     private boolean closeOnCancel = true;
-    private ErrorHandler errorHandler = new DefaultErrorHandler("Erreur de sauvegarde.");
+    private ErrorHandler errorHandler = new DefaultErrorHandler("");
     private PropertyChangeSupport propertySupport = new PropertyChangeSupport(this);
     private ErrorCheckerList errorCheckerList = new ErrorCheckerList();
     private boolean mustSave = true;
@@ -75,8 +77,7 @@ public class ButtonPanelLogic implements GuiLogic<ButtonPanelGui> {
 
         gui.getArchiveButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
-                setArchiveDate(getArchiveManager().askArchiveDate(gui
-                      .getArchiveButton()));
+                setArchiveDate(getArchiveManager().askArchiveDate(gui.getArchiveButton()));
             }
         });
         gui.getCancelButton().addActionListener(new ActionListener() {
@@ -362,12 +363,16 @@ public class ButtonPanelLogic implements GuiLogic<ButtonPanelGui> {
         DetailDataSource detail = new DetailDataSource(listDataSource.getGuiContext());
         setMainDataSource(detail);
         addSubDataSource(listDataSource);
+
+        gui.setTranslationBackpack(listDataSource.getGuiContext());
     }
 
 
     public void setMainDataSource(DetailDataSource mainDataSource) {
         this.mainDataSource = mainDataSource;
         setDataSource();
+
+        gui.setTranslationBackpack(mainDataSource.getGuiContext());
     }
 
 
