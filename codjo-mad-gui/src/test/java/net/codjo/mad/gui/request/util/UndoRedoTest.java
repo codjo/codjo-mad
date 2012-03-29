@@ -1,11 +1,11 @@
 package net.codjo.mad.gui.request.util;
-import net.codjo.gui.toolkit.date.NoNullDateField;
-import net.codjo.mad.gui.framework.DefaultGuiContext;
-import net.codjo.mad.gui.request.DetailDataSource;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+import net.codjo.gui.toolkit.date.NoNullDateField;
+import net.codjo.mad.gui.MadGuiContext;
+import net.codjo.mad.gui.request.DetailDataSource;
 import org.uispec4j.Button;
 import org.uispec4j.CheckBox;
 import org.uispec4j.Key;
@@ -23,7 +23,7 @@ public class UndoRedoTest extends UISpecTestCase {
 
 
     public void test_undoRedoSnapshotMode() throws Exception {
-        DetailDataSource dataSource = new DetailDataSource(new DefaultGuiContext());
+        DetailDataSource dataSource = new DetailDataSource(new MadGuiContext());
 
         final JCheckBox checkBox = new JCheckBox();
         final JTextField textField = new JTextField();

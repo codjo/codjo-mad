@@ -2,19 +2,26 @@ package net.codjo.mad.gui.request.util;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import net.codjo.i18n.common.TranslationManager;
+import net.codjo.i18n.gui.InternationalizableContainer;
+import net.codjo.i18n.gui.TranslationNotifier;
+import net.codjo.mad.gui.framework.GuiContext;
+
+import static net.codjo.mad.gui.i18n.InternationalizationUtil.retrieveTranslationNotifier;
 /**
  * Panel contenant les boutons d'un ecran détail.
  *
  * @author $Author: gaudefr $
  * @version $Revision: 1.6 $
  */
-public class ButtonPanelGui extends JPanel {
+public class ButtonPanelGui extends JPanel implements InternationalizableContainer {
     private JButton archiveButton = new JButton();
     private JButton cancelButton = new JButton();
     private JButton okButton = new JButton();
     private JButton redoButton = new JButton();
     private JButton undoButton = new JButton();
     private JButton whatsNewButton = new JButton();
+    private TranslationManager translationManager;
 
 
     public ButtonPanelGui() {
@@ -117,5 +124,19 @@ public class ButtonPanelGui extends JPanel {
 
     protected void setPrefix(String prefix, JButton button) {
         button.setName(prefix + "." + button.getName());
+    }
+
+
+    public void setTranslationBackpack(GuiContext guiContext) {
+        TranslationNotifier translationNotifier = retrieveTranslationNotifier(guiContext);
+        translationNotifier.addInternationalizableContainer(this);
+    }
+
+
+    public void addInternationalizableComponents(TranslationNotifier translationNotifier) {
+        translationNotifier.addInternationalizableComponent(okButton, "ButtonPanelGui.ok", null);
+        translationNotifier.addInternationalizableComponent(cancelButton, "ButtonPanelGui.cancel", null);
+        translationNotifier.addInternationalizableComponent(archiveButton, "ButtonPanelGui.store", null);
+        translationNotifier.addInternationalizableComponent(whatsNewButton, "ButtonPanelGui.whatsnew", null);
     }
 }

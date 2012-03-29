@@ -468,9 +468,9 @@ public class RequestToolBarTest {
 
         InternationalizationUtil.retrieveTranslationNotifier(context).setLanguage(Language.EN);
 
-        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_ADD, "Add an entry");
-        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_DELETE, "Delete selected entries");
-        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_EDIT, "Edit selected entry");
+        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_ADD, "Add an item");
+        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_DELETE, "Delete selected items");
+        assertButtonI18n(uiToolBar, RequestToolBar.ACTION_EDIT, "Edit selected item");
         assertButtonI18n(uiToolBar, RequestToolBar.ACTION_EXPORT_ALL_PAGES, "Open as Excel worksheet");
         assertButtonI18n(uiToolBar, RequestToolBar.ACTION_NEXT_PAGE, "Show next page");
         assertButtonI18n(uiToolBar, RequestToolBar.ACTION_PREVIOUS_PAGE, "Show previous page");

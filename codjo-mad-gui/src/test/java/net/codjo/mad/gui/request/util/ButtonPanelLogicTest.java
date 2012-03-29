@@ -1,25 +1,4 @@
 package net.codjo.mad.gui.request.util;
-import net.codjo.mad.client.request.FieldsList;
-import net.codjo.mad.client.request.RequestException;
-import net.codjo.mad.client.request.RequestSender;
-import net.codjo.mad.client.request.Result;
-import net.codjo.mad.client.request.Row;
-import net.codjo.mad.gui.framework.DefaultGuiContext;
-import net.codjo.mad.gui.request.DataLink;
-import net.codjo.mad.gui.request.DetailDataSource;
-import net.codjo.mad.gui.request.ErrorHandler;
-import net.codjo.mad.gui.request.JoinKeys;
-import net.codjo.mad.gui.request.ListDataSource;
-import net.codjo.mad.gui.request.Mock;
-import net.codjo.mad.gui.request.Preference;
-import net.codjo.mad.gui.request.undo.DataSourceUndoManager;
-import net.codjo.mad.gui.request.undo.DataSourceUndoManagerStub;
-import net.codjo.mad.gui.request.archive.ArchiveManager;
-import net.codjo.mad.gui.request.archive.ArchiveManagerFactory;
-import net.codjo.mad.gui.request.factory.RequestFactory;
-import net.codjo.mad.gui.request.factory.SelectFactory;
-import net.codjo.security.common.api.UserMock;
-import net.codjo.test.common.LogString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -28,6 +7,28 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
 import junit.framework.TestCase;
+import net.codjo.mad.client.request.FieldsList;
+import net.codjo.mad.client.request.RequestException;
+import net.codjo.mad.client.request.RequestSender;
+import net.codjo.mad.client.request.Result;
+import net.codjo.mad.client.request.Row;
+import net.codjo.mad.gui.MadGuiContext;
+import net.codjo.mad.gui.framework.DefaultGuiContext;
+import net.codjo.mad.gui.request.DataLink;
+import net.codjo.mad.gui.request.DetailDataSource;
+import net.codjo.mad.gui.request.ErrorHandler;
+import net.codjo.mad.gui.request.JoinKeys;
+import net.codjo.mad.gui.request.ListDataSource;
+import net.codjo.mad.gui.request.Mock;
+import net.codjo.mad.gui.request.Preference;
+import net.codjo.mad.gui.request.archive.ArchiveManager;
+import net.codjo.mad.gui.request.archive.ArchiveManagerFactory;
+import net.codjo.mad.gui.request.factory.RequestFactory;
+import net.codjo.mad.gui.request.factory.SelectFactory;
+import net.codjo.mad.gui.request.undo.DataSourceUndoManager;
+import net.codjo.mad.gui.request.undo.DataSourceUndoManagerStub;
+import net.codjo.security.common.api.UserMock;
+import net.codjo.test.common.LogString;
 /**
  * Test de la classe ButtonPanelLogic.
  *
@@ -208,8 +209,8 @@ public class ButtonPanelLogicTest extends TestCase {
 
 
     /**
-     * Teste que le DetailDataSource transfère bien les événements du fils en les renommant, et qu'il tient
-     * compte des modifications sur le fils
+     * Teste que le DetailDataSource transfère bien les événements du fils en les renommant, et qu'il tient compte des
+     * modifications sur le fils
      */
     public void test_son_changeEvent() throws Exception {
         DetailDataSource father = createFather();
@@ -580,7 +581,7 @@ public class ButtonPanelLogicTest extends TestCase {
 
 
     public void test_getMainDataSourceWithListDataSource() throws Exception {
-        logic.setMainDataSource(new ListDataSource());
+        logic.setMainDataSource(new MockListDataSource(new String[0]));
         try {
             logic.getMainDataSource();
             fail();
@@ -619,6 +620,8 @@ public class ButtonPanelLogicTest extends TestCase {
                              COLUMN_FATHERDATA, fatherData));
         father.setLoadResult(res);
         father.getLogString().clear();
+
+        father.setGuiContext(new MadGuiContext());
         return father;
     }
 
@@ -679,7 +682,7 @@ public class ButtonPanelLogicTest extends TestCase {
 
 
     private static DefaultGuiContext createGuiContext() {
-        DefaultGuiContext guiContext = new DefaultGuiContext();
+        MadGuiContext guiContext = new MadGuiContext();
         guiContext.setUser(new UserMock().mockIsAllowedTo(true));
         return guiContext;
     }
@@ -723,7 +726,7 @@ public class ButtonPanelLogicTest extends TestCase {
 
 
         private MockDetailDataSource() {
-            super(new DefaultGuiContext());
+            super(new MadGuiContext());
         }
 
 
@@ -770,6 +773,7 @@ public class ButtonPanelLogicTest extends TestCase {
 
         MockListDataSource(String[] columns) {
             this.columns = columns;
+            setGuiContext(new MadGuiContext());
         }
 
 

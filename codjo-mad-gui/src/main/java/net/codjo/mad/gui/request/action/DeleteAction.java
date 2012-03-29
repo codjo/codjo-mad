@@ -1,4 +1,12 @@
 package net.codjo.mad.gui.request.action;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import net.codjo.gui.toolkit.util.ErrorDialog;
 import net.codjo.mad.client.request.FieldsList;
 import net.codjo.mad.client.request.Request;
@@ -10,19 +18,15 @@ import net.codjo.mad.gui.framework.GuiContext;
 import net.codjo.mad.gui.request.Preference;
 import net.codjo.mad.gui.request.RequestTable;
 import net.codjo.mad.gui.request.factory.RequestFactory;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import org.apache.log4j.Logger;
+
+import static net.codjo.mad.gui.i18n.InternationalizationUtil.translate;
 
 public class DeleteAction extends AbstractGuiAction {
     private static final Logger APP = Logger.getLogger(DeleteAction.class);
-    private String confirmMessage = "Etes-vous sûr(e) de vouloir supprimer ?";
+    private static final String DEFAULT_CONFIRM_MESSAGE =
+          "net.codjo.mad.gui.request.action.DeleteAction.confirmationMessage";
+    private String confirmMessage = DEFAULT_CONFIRM_MESSAGE;
     private RequestTable table;
 
 
@@ -49,8 +53,11 @@ public class DeleteAction extends AbstractGuiAction {
         try {
             if (confirmMessage != null) {
                 int selectedOption =
-                      JOptionPane.showConfirmDialog(getDesktopPane(), confirmMessage,
-                                                    "Confirmation de suppression", JOptionPane.YES_NO_OPTION);
+                      JOptionPane.showConfirmDialog(getDesktopPane(), getMessageToDisplay(),
+                                                    translate(
+                                                          "net.codjo.mad.gui.request.action.DeleteAction.confirmationMessage.title",
+                                                          getGuiContext()),
+                                                    JOptionPane.YES_NO_OPTION);
                 if (selectedOption != JOptionPane.YES_OPTION) {
                     return;
                 }
@@ -67,12 +74,24 @@ public class DeleteAction extends AbstractGuiAction {
             }
         }
         catch (Exception ex) {
-            APP.error("Erreur interne", ex);
-            ErrorDialog.show(table, "erreur interne", ex);
+            APP.error(translate("net.codjo.mad.gui.request.action.DeleteAction.internalError", getGuiContext()), ex);
+            ErrorDialog.show(table,
+                             translate("net.codjo.mad.gui.request.action.DeleteAction.internalError", getGuiContext()),
+                             ex);
         }
         finally {
             displayDefaultCursor();
         }
+    }
+
+
+    private String getMessageToDisplay() {
+        // Warning: it is necessary to test the references of objects to translate only if the message
+        // has not been customized by application
+        if (DEFAULT_CONFIRM_MESSAGE == confirmMessage) {
+            return translate(confirmMessage, getGuiContext());
+        }
+        return confirmMessage;
     }
 
 
@@ -141,8 +160,10 @@ public class DeleteAction extends AbstractGuiAction {
 
         try {
             getGuiContext().getSender().getConnectionOperations().sendRequests(array);
-        } catch (RequestException e) {
-            ErrorDialog.show(table, "Impossible d'effacer la ligne", e.getMessage());
+        }
+        catch (RequestException e) {
+            ErrorDialog.show(table, translate("net.codjo.mad.gui.request.action.DeleteAction.error",
+                                              getGuiContext()), e.getMessage());
             return;
         }
         table.load();

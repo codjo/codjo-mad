@@ -39,6 +39,7 @@ net.codjo.mad.gui.framework
 	-> net.codjo.security.common.api
 
 net.codjo.mad.gui.i18n
+	-> net.codjo.gui.toolkit.util
 	-> net.codjo.mad.gui.base
 	-> net.codjo.i18n.common
 	-> net.codjo.i18n.gui
@@ -147,6 +148,9 @@ net.codjo.mad.gui.request.undo
 	-> net.codjo.mad.gui.request.wrapper
 
 net.codjo.mad.gui.request.util
+	-> net.codjo.mad.gui.i18n
+	-> net.codjo.i18n.common
+	-> net.codjo.i18n.gui
 	-> net.codjo.gui.toolkit.table
 	-> net.codjo.gui.toolkit.util
 	-> net.codjo.mad.client.plugin
