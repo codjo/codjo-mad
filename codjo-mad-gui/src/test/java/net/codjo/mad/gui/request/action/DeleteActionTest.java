@@ -1,13 +1,14 @@
 package net.codjo.mad.gui.request.action;
+import java.awt.Component;
+import javax.swing.JButton;
 import net.codjo.mad.client.plugin.MadConnectionOperationsMock;
+import net.codjo.mad.gui.MadGuiContext;
 import net.codjo.mad.gui.framework.DefaultGuiContext;
 import net.codjo.mad.gui.framework.Sender;
 import net.codjo.mad.gui.request.Mock;
 import net.codjo.mad.gui.request.RequestTable;
 import net.codjo.security.common.api.UserMock;
 import net.codjo.test.common.LogString;
-import java.awt.Component;
-import javax.swing.JButton;
 import org.uispec4j.Button;
 import org.uispec4j.Trigger;
 import org.uispec4j.UISpecTestCase;
@@ -31,6 +32,28 @@ public class DeleteActionTest extends UISpecTestCase {
             @Override
             public Trigger process(Window window) throws Exception {
                 window.assertTitleEquals("Confirmation de suppression");
+                assertEquals("Etes-vous sûr(e) de vouloir supprimer ?",
+                             window.getTextBox("OptionPane.label").getText());
+                return window.getButton(new LabelComponentMatcher("Oui")).triggerClick();
+            }
+        }).run();
+
+        logString.assertContent("sendRequest()");
+    }
+
+
+    public void test_setConfirmMessage() throws Exception {
+        deleteAction.setConfirmMessage("Mon message à moi");
+
+        WindowInterceptor.init(new Trigger() {
+            public void run() throws Exception {
+                testButton.click();
+            }
+        }).process(new WindowHandler() {
+            @Override
+            public Trigger process(Window window) throws Exception {
+                window.assertTitleEquals("Confirmation de suppression");
+                assertEquals("Mon message à moi", window.getTextBox("OptionPane.label").getText());
                 return window.getButton(new LabelComponentMatcher("Oui")).triggerClick();
             }
         }).run();
@@ -61,16 +84,16 @@ public class DeleteActionTest extends UISpecTestCase {
             }
         }).run();
 
-
         assertTrue(logString.getContent().length() == 0);
     }
+
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
         logString = new LogString();
 
-        DefaultGuiContext guiContext = new DefaultGuiContext();
+        DefaultGuiContext guiContext = new MadGuiContext();
         guiContext.setUser(new UserMock());
         guiContext.setSender(new Sender(new MadConnectionOperationsMock(logString)));
         RequestTable table = new RequestTable(new Mock.ListDataSource());

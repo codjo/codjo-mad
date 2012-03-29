@@ -1,10 +1,13 @@
 package net.codjo.mad.gui.base;
-import net.codjo.gui.toolkit.AboutWindow;
-import net.codjo.mad.gui.framework.AbstractGuiAction;
-import net.codjo.mad.gui.framework.GuiContext;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import net.codjo.gui.toolkit.AboutWindow;
+import net.codjo.mad.gui.framework.AbstractGuiAction;
+import net.codjo.mad.gui.framework.GuiContext;
+
+import static net.codjo.mad.gui.i18n.InternationalizationUtil.retrieveTranslationManager;
+import static net.codjo.mad.gui.i18n.InternationalizationUtil.retrieveTranslationNotifier;
 /**
  * Fenêtre à propos d'une application.
  */
@@ -28,7 +31,9 @@ public class AboutWindowAction extends AbstractGuiAction {
               new AboutWindow(guiContext.getMainFrame(),
                               (String)getGuiContext().getProperty("application.name"),
                               (String)getGuiContext().getProperty("application.version"),
-                              AboutWindowAction.class.getResource("/versions/historique.html"));
+                              AboutWindowAction.class.getResource("/versions/historique.html"),
+                              retrieveTranslationManager(guiContext),
+                              retrieveTranslationNotifier(guiContext));
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = aboutWindow.getSize();

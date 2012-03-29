@@ -1,6 +1,7 @@
 package net.codjo.mad.gui.request.wrapper;
 import net.codjo.gui.toolkit.date.DateField;
 import net.codjo.gui.toolkit.date.NoNullDateField;
+import net.codjo.mad.gui.MadGuiContext;
 import net.codjo.mad.gui.framework.DefaultGuiContext;
 import net.codjo.mad.gui.request.DetailDataSource;
 import net.codjo.mad.gui.request.util.ButtonPanelLogic;
@@ -56,7 +57,7 @@ public class DateFieldWrapperTest extends AbstractWrapperTest {
         NoNullDateField dateField = new NoNullDateField();
         Panel dateFieldWrapper = new Panel(dateField);
 
-        DetailDataSource dataSource = new DetailDataSource(new DefaultGuiContext());
+        DetailDataSource dataSource = new DetailDataSource(new MadGuiContext());
         dataSource.declare("date", dateField);
 
         ButtonPanelLogic buttonPanelLogic = new ButtonPanelLogic();
