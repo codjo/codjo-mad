@@ -18,7 +18,7 @@ public class GetterTest {
 
         getter.get(resultSet);
 
-        Mockito.verify(resultSet, Mockito.times(1)).getObject(0);
+        Mockito.verify(resultSet, Mockito.times(1)).getString(0);
     }
 
 
@@ -66,7 +66,7 @@ public class GetterTest {
 
         getter.get(resultSet);
 
-        Mockito.verify(resultSet, Mockito.times(1)).getObject("MY_COL");
+        Mockito.verify(resultSet, Mockito.times(1)).getString("MY_COL");
     }
 
 
