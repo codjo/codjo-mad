@@ -24,7 +24,9 @@ import static net.codjo.mad.gui.i18n.InternationalizationUtil.translate;
 
 public class DeleteAction extends AbstractGuiAction {
     private static final Logger APP = Logger.getLogger(DeleteAction.class);
-    private String confirmMessage = "net.codjo.mad.gui.request.action.DeleteAction.confirmationMessage";
+    private static final String DEFAULT_CONFIRM_MESSAGE =
+          "net.codjo.mad.gui.request.action.DeleteAction.confirmationMessage";
+    private String confirmMessage = DEFAULT_CONFIRM_MESSAGE;
     private RequestTable table;
 
 
@@ -51,7 +53,7 @@ public class DeleteAction extends AbstractGuiAction {
         try {
             if (confirmMessage != null) {
                 int selectedOption =
-                      JOptionPane.showConfirmDialog(getDesktopPane(), translate(confirmMessage, getGuiContext()),
+                      JOptionPane.showConfirmDialog(getDesktopPane(), getMessageToDisplay(),
                                                     translate(
                                                           "net.codjo.mad.gui.request.action.DeleteAction.confirmationMessage.title",
                                                           getGuiContext()),
@@ -80,6 +82,16 @@ public class DeleteAction extends AbstractGuiAction {
         finally {
             displayDefaultCursor();
         }
+    }
+
+
+    private String getMessageToDisplay() {
+        // Warning: it is necessary to test the references of objects to translate only if the message
+        // has not been customized by application
+        if (DEFAULT_CONFIRM_MESSAGE == confirmMessage) {
+            return translate(confirmMessage, getGuiContext());
+        }
+        return confirmMessage;
     }
 
 
