@@ -8,8 +8,7 @@ import java.sql.Types;
 public abstract class AbstractGetter {
 
     protected int idx;
-    private int sqlType = java.sql.Types.VARCHAR;
-    ;
+    private int sqlType = Types.OTHER;
     protected String name;
 
 

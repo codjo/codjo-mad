@@ -18,7 +18,7 @@ public class GetterTest {
 
         getter.get(resultSet);
 
-        Mockito.verify(resultSet, Mockito.times(1)).getString(0);
+        Mockito.verify(resultSet, Mockito.times(1)).getObject(0);
     }
 
 
@@ -66,7 +66,7 @@ public class GetterTest {
 
         getter.get(resultSet);
 
-        Mockito.verify(resultSet, Mockito.times(1)).getString("MY_COL");
+        Mockito.verify(resultSet, Mockito.times(1)).getObject("MY_COL");
     }
 
 
@@ -99,5 +99,21 @@ public class GetterTest {
         getter.get(resultSet);
 
         Mockito.verify(resultSet, Mockito.times(1)).getTimestamp("MY_COL");
+    }
+
+
+    @Test
+    public void test_constructor_name_string() throws Exception {
+        Getter getter = new Getter("MY_COL", Types.VARCHAR) {
+            @Override
+            public String get(Object bean) throws Exception {
+                return null;
+            }
+        };
+        ResultSet resultSet = Mockito.mock(ResultSet.class);
+
+        getter.get(resultSet);
+
+        Mockito.verify(resultSet, Mockito.times(1)).getString("MY_COL");
     }
 }
