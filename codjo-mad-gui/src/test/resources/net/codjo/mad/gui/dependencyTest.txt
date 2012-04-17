@@ -136,7 +136,7 @@ net.codjo.mad.gui.request.util
 	-> net.codjo.security.common.api
 	-> net.codjo.test.common
 	-> org.mockito
-	-> org.mockito.internal.progress
+	-> org.mockito.stubbing
 	-> org.uispec4j
 
 net.codjo.mad.gui.request.util.comparators
