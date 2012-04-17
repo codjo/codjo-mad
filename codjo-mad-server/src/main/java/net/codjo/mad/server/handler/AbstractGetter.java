@@ -3,12 +3,12 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.sql.Types;
 
 public abstract class AbstractGetter {
 
     protected int idx;
-    private int sqlType = java.sql.Types.VARCHAR;
-    ;
+    private int sqlType = Types.OTHER;
     protected String name;
 
 
@@ -43,10 +43,23 @@ public abstract class AbstractGetter {
             case java.sql.Types.TIMESTAMP:
                 value = getTimestamp(resultSet);
                 break;
+            case Types.VARCHAR:
+                value = getString(resultSet);
+                break;
             default:
                 value = getObject(resultSet);
         }
         return XMLUtils.convertToStringValue(value);
+    }
+
+
+    private String getString(ResultSet resultSet) throws SQLException {
+        if (name == null) {
+            return resultSet.getString(idx);
+        }
+        else {
+            return resultSet.getString(name);
+        }
     }
 
 
