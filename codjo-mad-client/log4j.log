@@ -1,0 +1,848 @@
+11:45:35,605 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+11:45:35,619 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (14 ms) 
+11:45:35,619 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,631 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="3"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+11:45:35,631 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:35,631 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>  <error request_id = "3">    <label>une erreur</label>    <type>class java.lang.RuntimeException</type>  </error></results>
+11:45:35,631 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,649 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 17 ms
+11:45:35,657 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+11:45:35,666 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (9 ms) 
+11:45:35,666 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,674 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="5"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+11:45:35,674 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:35,674 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>     <result request_id="5">        <primarykey>           <field name="pimsCode"/>        </primarykey>        <row>           <field name="pimsCode">666</field>        </row>     </result></results>
+11:45:35,674 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,683 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 9 ms
+11:45:35,700 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : [<name=a - value=1>]
+11:45:35,701 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : []
+11:45:35,734 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+11:45:35,751 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (17 ms) 
+11:45:35,751 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,762 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="15"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="16"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+11:45:35,762 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:35,762 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+11:45:35,762 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,771 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 8 ms
+11:45:35,772 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+11:45:35,798 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (26 ms) 
+11:45:35,798 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,818 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="18"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="19"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+11:45:35,818 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:35,818 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+11:45:35,818 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:35,823 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+11:45:35,823 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 1000 ms
+11:45:35,833 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+11:45:35,834 ERROR net.codjo.mad.client.request.RequestSender - Erreur lors de l'envoie de la requête : 
+net.codjo.mad.client.request.RequestException: Erreur de communication avec le serveur: Il n'a pas répondu dans le temps imparti (> 1s).
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:64)
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:53)
+	at net.codjo.mad.client.request.RequestSenderTest.test_send_timeout(RequestSenderTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:138)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:125)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:818)
+11:45:35,847 ERROR net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="21"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="22"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+11:45:35,847 ERROR net.codjo.mad.client.request.RequestSender - Erreur renvoyée : 
+11:45:36,165 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:36,287 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:38,866 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+11:45:38,976 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,033 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+11:45:39,132 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,141 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+11:45:39,241 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'ambassador' instituated
+11:45:39,243 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 1 ms
+11:45:39,325 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,329 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+11:45:39,377 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+11:45:39,438 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,445 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+11:45:39,473 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (28 ms) 
+11:45:39,473 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,478 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+11:45:39,478 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,478 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">0</field></row><row><field name="id">1</field></row></result></results>
+11:45:39,478 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,484 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+11:45:39,488 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,496 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+11:45:39,506 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+11:45:39,506 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,510 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+11:45:39,510 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,510 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+11:45:39,510 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,515 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+11:45:39,532 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,533 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+11:45:39,543 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+11:45:39,543 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,549 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+11:45:39,549 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,549 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+11:45:39,549 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,554 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+11:45:39,559 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,560 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+11:45:39,569 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (9 ms) 
+11:45:39,570 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,574 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+11:45:39,575 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,575 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+11:45:39,575 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,579 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+11:45:39,583 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,584 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+11:45:39,625 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (41 ms) 
+11:45:39,625 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,637 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+11:45:39,637 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,637 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">00</field></row><row><field name="id">01</field></row></result><result request_id="2" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">10</field></row><row><field name="id">11</field></row></result></results>
+11:45:39,637 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,643 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+11:45:39,648 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:39,650 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+11:45:39,666 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+11:45:39,666 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,676 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+11:45:39,676 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:39,676 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+11:45:39,676 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:39,680 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+11:45:39,684 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+11:45:40,328 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+11:45:40,339 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'AmbassadorForYou' instituated
+11:45:40,339 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+11:45:40,339 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+11:45:40,414 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+11:45:40,428 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+11:45:41,028 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur deleteAll avec un timeout de 1000 ms
+11:45:41,082 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (54 ms) 
+11:45:41,082 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:41,086 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><delete request_id="1"><id>deleteAll</id><primarykey><field name="id">5</field></primarykey></delete></requests>
+11:45:41,087 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+11:45:41,087 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="1"><primarykey><field name="result"/></primarykey><row><field name="result">ok</field></row></result></results>
+11:45:41,087 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+11:45:41,090 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 3 ms
+11:45:41,135 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+11:45:41,141 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+11:45:41,241 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+11:45:41,247 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+14:11:13,933 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:11:13,947 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (14 ms) 
+14:11:13,947 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:13,959 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="3"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+14:11:13,959 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:13,959 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>  <error request_id = "3">    <label>une erreur</label>    <type>class java.lang.RuntimeException</type>  </error></results>
+14:11:13,959 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:13,972 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 12 ms
+14:11:13,980 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:11:13,989 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (9 ms) 
+14:11:13,989 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:13,997 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="5"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+14:11:13,997 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:13,997 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>     <result request_id="5">        <primarykey>           <field name="pimsCode"/>        </primarykey>        <row>           <field name="pimsCode">666</field>        </row>     </result></results>
+14:11:13,997 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:14,006 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 9 ms
+14:11:14,022 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : [<name=a - value=1>]
+14:11:14,024 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : []
+14:11:14,045 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:11:14,062 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (17 ms) 
+14:11:14,062 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:14,074 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="15"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="16"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:11:14,074 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:14,074 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+14:11:14,074 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:14,082 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 8 ms
+14:11:14,083 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:11:14,098 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:11:14,098 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:14,128 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="18"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="19"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:11:14,129 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:14,129 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+14:11:14,129 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:14,133 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+14:11:14,134 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 1000 ms
+14:11:14,144 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+14:11:14,145 ERROR net.codjo.mad.client.request.RequestSender - Erreur lors de l'envoie de la requête : 
+net.codjo.mad.client.request.RequestException: Erreur de communication avec le serveur: Il n'a pas répondu dans le temps imparti (> 1s).
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:64)
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:53)
+	at net.codjo.mad.client.request.RequestSenderTest.test_send_timeout(RequestSenderTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:138)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:125)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:818)
+14:11:14,158 ERROR net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="21"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="22"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:11:14,158 ERROR net.codjo.mad.client.request.RequestSender - Erreur renvoyée : 
+14:11:14,460 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:14,545 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,392 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+14:11:16,502 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,585 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+14:11:16,670 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,681 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:11:16,715 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'ambassador' instituated
+14:11:16,717 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 1 ms
+14:11:16,798 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,803 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:11:16,827 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+14:11:16,892 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,899 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+14:11:16,920 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (21 ms) 
+14:11:16,920 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:16,927 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+14:11:16,928 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:16,928 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">0</field></row><row><field name="id">1</field></row></result></results>
+14:11:16,928 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:16,934 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+14:11:16,939 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,940 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+14:11:16,950 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+14:11:16,950 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:16,954 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+14:11:16,954 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:16,954 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+14:11:16,954 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:16,959 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+14:11:16,963 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:16,964 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+14:11:17,001 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (37 ms) 
+14:11:17,002 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,007 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+14:11:17,007 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:17,007 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+14:11:17,007 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,013 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+14:11:17,017 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:17,018 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+14:11:17,028 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+14:11:17,028 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,033 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+14:11:17,033 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:17,034 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+14:11:17,034 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,038 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+14:11:17,042 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:17,044 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+14:11:17,059 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:11:17,059 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,069 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+14:11:17,069 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:17,069 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">00</field></row><row><field name="id">01</field></row></result><result request_id="2" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">10</field></row><row><field name="id">11</field></row></result></results>
+14:11:17,070 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,076 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+14:11:17,080 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:17,081 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+14:11:17,097 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+14:11:17,097 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,106 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+14:11:17,106 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:17,106 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+14:11:17,106 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:17,110 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+14:11:17,114 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:11:17,486 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:11:17,495 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'AmbassadorForYou' instituated
+14:11:17,496 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:11:17,496 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:11:17,572 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:11:17,589 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+14:11:18,184 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur deleteAll avec un timeout de 1000 ms
+14:11:18,206 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (22 ms) 
+14:11:18,206 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:18,215 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><delete request_id="1"><id>deleteAll</id><primarykey><field name="id">5</field></primarykey></delete></requests>
+14:11:18,215 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:11:18,215 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="1"><primarykey><field name="result"/></primarykey><row><field name="result">ok</field></row></result></results>
+14:11:18,216 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:11:18,222 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+14:11:18,284 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:11:18,290 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:11:18,381 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+14:11:18,386 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+14:26:44,028 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:26:44,028 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (0 ms) 
+14:26:44,044 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,044 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="3"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+14:26:44,044 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:44,044 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>  <error request_id = "3">    <label>une erreur</label>    <type>class java.lang.RuntimeException</type>  </error></results>
+14:26:44,044 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,060 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+14:26:44,075 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:26:44,075 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (0 ms) 
+14:26:44,075 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,091 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="5"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+14:26:44,091 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:44,091 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>     <result request_id="5">        <primarykey>           <field name="pimsCode"/>        </primarykey>        <row>           <field name="pimsCode">666</field>        </row>     </result></results>
+14:26:44,091 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,091 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:44,106 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : [<name=a - value=1>]
+14:26:44,106 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : []
+14:26:44,138 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:26:44,153 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:44,153 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,153 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="15"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="16"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:26:44,153 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:44,153 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+14:26:44,153 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,169 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+14:26:44,169 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+14:26:44,184 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:44,184 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,216 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="18"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="19"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:26:44,216 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:44,216 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+14:26:44,216 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:44,216 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:44,216 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 1000 ms
+14:26:44,231 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:44,231 ERROR net.codjo.mad.client.request.RequestSender - Erreur lors de l'envoie de la requête : 
+net.codjo.mad.client.request.RequestException: Erreur de communication avec le serveur: Il n'a pas répondu dans le temps imparti (> 1s).
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:64)
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:53)
+	at net.codjo.mad.client.request.RequestSenderTest.test_send_timeout(RequestSenderTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:138)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:125)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:818)
+14:26:44,247 ERROR net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="21"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="22"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+14:26:44,247 ERROR net.codjo.mad.client.request.RequestSender - Erreur renvoyée : 
+14:26:44,528 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:44,606 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:46,431 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+14:26:46,540 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:46,618 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+14:26:46,712 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:46,727 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:26:46,774 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'ambassador' instituated
+14:26:46,774 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:26:46,868 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:46,868 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:26:46,914 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+14:26:46,977 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:46,992 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+14:26:47,008 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+14:26:47,008 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,024 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+14:26:47,024 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,024 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">0</field></row><row><field name="id">1</field></row></result></results>
+14:26:47,024 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,024 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:47,024 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,039 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+14:26:47,055 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+14:26:47,055 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,055 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+14:26:47,055 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,055 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+14:26:47,055 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,055 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:47,055 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,070 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+14:26:47,102 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (32 ms) 
+14:26:47,102 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,102 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+14:26:47,102 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,102 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+14:26:47,102 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,117 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 15 ms
+14:26:47,117 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,117 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+14:26:47,133 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+14:26:47,133 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,133 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+14:26:47,133 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,133 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+14:26:47,133 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,133 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:47,133 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,133 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+14:26:47,148 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:47,148 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,164 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+14:26:47,164 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,164 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">00</field></row><row><field name="id">01</field></row></result><result request_id="2" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">10</field></row><row><field name="id">11</field></row></result></results>
+14:26:47,164 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,164 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:47,180 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,180 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+14:26:47,195 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:47,195 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,195 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+14:26:47,195 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:47,195 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+14:26:47,195 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:47,211 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+14:26:47,211 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+14:26:47,804 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:26:47,804 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'AmbassadorForYou' instituated
+14:26:47,804 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:26:47,804 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:26:47,897 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:26:47,913 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+14:26:48,537 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur deleteAll avec un timeout de 1000 ms
+14:26:48,552 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+14:26:48,552 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:48,552 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><delete request_id="1"><id>deleteAll</id><primarykey><field name="id">5</field></primarykey></delete></requests>
+14:26:48,552 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+14:26:48,552 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="1"><primarykey><field name="result"/></primarykey><row><field name="result">ok</field></row></result></results>
+14:26:48,552 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+14:26:48,568 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+14:26:48,615 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+14:26:48,630 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+14:26:48,724 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+14:26:48,740 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+16:41:08,651 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:41:08,665 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (14 ms) 
+16:41:08,665 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,676 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="3"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+16:41:08,676 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:08,676 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>  <error request_id = "3">    <label>une erreur</label>    <type>class java.lang.RuntimeException</type>  </error></results>
+16:41:08,676 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,688 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 11 ms
+16:41:08,697 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:41:08,706 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (9 ms) 
+16:41:08,706 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,725 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="5"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+16:41:08,725 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:08,725 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>     <result request_id="5">        <primarykey>           <field name="pimsCode"/>        </primarykey>        <row>           <field name="pimsCode">666</field>        </row>     </result></results>
+16:41:08,725 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,734 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 9 ms
+16:41:08,739 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : [<name=a - value=1>]
+16:41:08,741 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : []
+16:41:08,761 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:41:08,777 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (17 ms) 
+16:41:08,777 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,789 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="15"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="16"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:41:08,789 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:08,789 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+16:41:08,789 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,808 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 19 ms
+16:41:08,809 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:41:08,824 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:41:08,824 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,843 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="18"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="19"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:41:08,843 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:08,843 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+16:41:08,843 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:08,847 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+16:41:08,848 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 1000 ms
+16:41:08,858 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+16:41:08,858 ERROR net.codjo.mad.client.request.RequestSender - Erreur lors de l'envoie de la requête : 
+net.codjo.mad.client.request.RequestException: Erreur de communication avec le serveur: Il n'a pas répondu dans le temps imparti (> 1s).
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:64)
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:53)
+	at net.codjo.mad.client.request.RequestSenderTest.test_send_timeout(RequestSenderTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:138)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:125)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:818)
+16:41:08,871 ERROR net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="21"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="22"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:41:08,871 ERROR net.codjo.mad.client.request.RequestSender - Erreur renvoyée : 
+16:41:09,108 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,167 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,315 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,334 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,339 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:41:09,549 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'ambassador' instituated
+16:41:09,554 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:41:09,639 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,643 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:41:09,664 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+16:41:09,727 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,735 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+16:41:09,768 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (33 ms) 
+16:41:09,768 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,774 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+16:41:09,775 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,775 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">0</field></row><row><field name="id">1</field></row></result></results>
+16:41:09,775 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,782 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 7 ms
+16:41:09,787 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,788 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+16:41:09,799 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (11 ms) 
+16:41:09,799 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,804 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+16:41:09,805 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,805 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+16:41:09,805 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,811 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+16:41:09,814 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,816 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+16:41:09,826 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (10 ms) 
+16:41:09,826 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,832 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+16:41:09,832 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,832 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+16:41:09,832 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,838 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 6 ms
+16:41:09,841 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,842 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+16:41:09,853 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (11 ms) 
+16:41:09,853 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,884 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+16:41:09,884 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,884 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+16:41:09,884 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,889 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+16:41:09,894 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,895 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+16:41:09,910 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:41:09,910 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,922 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+16:41:09,922 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,922 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">00</field></row><row><field name="id">01</field></row></result><result request_id="2" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">10</field></row><row><field name="id">11</field></row></result></results>
+16:41:09,922 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,927 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+16:41:09,932 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:09,933 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+16:41:09,951 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (18 ms) 
+16:41:09,951 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,962 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+16:41:09,962 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:09,962 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+16:41:09,962 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:09,967 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+16:41:09,971 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:41:10,228 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:41:10,237 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'AmbassadorForYou' instituated
+16:41:10,238 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 1 ms
+16:41:10,238 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:41:10,310 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:41:10,333 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+16:41:10,922 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur deleteAll avec un timeout de 1000 ms
+16:41:10,937 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:41:10,938 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:10,942 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><delete request_id="1"><id>deleteAll</id><primarykey><field name="id">5</field></primarykey></delete></requests>
+16:41:10,943 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:41:10,943 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="1"><primarykey><field name="result"/></primarykey><row><field name="result">ok</field></row></result></results>
+16:41:10,943 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:41:10,947 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 4 ms
+16:41:11,005 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:41:11,009 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:41:11,113 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 8 ms
+16:41:11,118 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 5 ms
+16:44:01,744 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:44:01,759 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:44:01,759 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,759 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="3"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+16:44:01,759 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:01,759 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>  <error request_id = "3">    <label>une erreur</label>    <type>class java.lang.RuntimeException</type>  </error></results>
+16:44:01,759 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,775 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:01,790 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:44:01,806 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+16:44:01,806 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,822 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="5"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert></requests>
+16:44:01,822 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:01,822 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results>     <result request_id="5">        <primarykey>           <field name="pimsCode"/>        </primarykey>        <row>           <field name="pimsCode">666</field>        </row>     </result></results>
+16:44:01,822 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,822 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:01,837 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : [<name=a - value=1>]
+16:44:01,837 ERROR net.codjo.mad.client.request.FieldsList - Champs présents : []
+16:44:01,853 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:44:01,868 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:44:01,868 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,884 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="15"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="16"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:44:01,884 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:01,884 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+16:44:01,884 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,884 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:01,884 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 60000 ms
+16:44:01,900 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+16:44:01,900 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,931 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="18"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="19"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:44:01,931 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:01,931 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?><results><error request_id = "2"><label>une erreur</label><type>class java.lang.RuntimeException</type></error></results>
+16:44:01,931 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:01,946 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 15 ms
+16:44:01,946 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur newCodificationPtf avec un timeout de 1000 ms
+16:44:01,946 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (0 ms) 
+16:44:01,946 ERROR net.codjo.mad.client.request.RequestSender - Erreur lors de l'envoie de la requête : 
+net.codjo.mad.client.request.RequestException: Erreur de communication avec le serveur: Il n'a pas répondu dans le temps imparti (> 1s).
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:64)
+	at net.codjo.mad.client.request.RequestSender.send(RequestSender.java:53)
+	at net.codjo.mad.client.request.RequestSenderTest.test_send_timeout(RequestSenderTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:138)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:125)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:818)
+16:44:01,962 ERROR net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><insert request_id="21"><id>newCodificationPtf</id><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D</field></row></insert><update request_id="22"><id>updateCodificationPtf</id><primarykey><field name="PIMS">609</field></primarykey><row><field name="SICOVAM">6969</field><field name="ISIN">0451</field><field name="LABEL">COUCOU D]]&gt;</field></row></update></requests>
+16:44:01,962 ERROR net.codjo.mad.client.request.RequestSender - Erreur renvoyée : 
+16:44:02,196 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:02,243 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:03,678 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+16:44:03,756 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:03,772 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador '' instituated
+16:44:03,881 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:03,896 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:44:03,959 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'ambassador' instituated
+16:44:03,974 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:44:04,068 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,084 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:44:04,099 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+16:44:04,162 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,177 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+16:44:04,224 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (47 ms) 
+16:44:04,224 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,224 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+16:44:04,224 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,224 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">0</field></row><row><field name="id">1</field></row></result></results>
+16:44:04,224 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,240 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+16:44:04,240 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,240 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+16:44:04,255 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:44:04,255 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,255 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+16:44:04,255 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,255 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+16:44:04,255 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,271 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms
+16:44:04,271 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,271 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur null avec un timeout de 10 ms
+16:44:04,286 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:44:04,286 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,286 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"/></requests>
+16:44:04,286 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,286 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="myId"/></primarykey><row><field name="myId">1</field><field name="name">bobo</field><field name="comment">c1</field></row><row><field name="myId">2</field><field name="name">boris</field><field name="comment">c2</field></row></result></results>
+16:44:04,286 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,286 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:04,302 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,302 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur doIt avec un timeout de 60000 ms
+16:44:04,318 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+16:44:04,318 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,318 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>doIt</id></command></requests>
+16:44:04,318 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,318 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+16:44:04,318 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,318 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:04,318 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,318 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+16:44:04,364 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (46 ms) 
+16:44:04,364 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,380 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+16:44:04,380 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,380 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">00</field></row><row><field name="id">01</field></row></result><result request_id="2" totalRowCount="2"><primarykey><field name="id"/></primarykey><row><field name="id">10</field></row><row><field name="id">11</field></row></result></results>
+16:44:04,380 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,380 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:04,380 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,396 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 2 requete(s) au serveur first avec un timeout de 60000 ms
+16:44:04,411 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (15 ms) 
+16:44:04,411 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,411 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><command request_id="1"><id>first</id></command><command request_id="2"><id>second</id></command></requests>
+16:44:04,411 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:04,411 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><error request_id="1"><label>Error</label></error></results>
+16:44:04,411 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:04,411 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:04,427 INFO  net.codjo.plugin.common.ApplicationCoreMock - Utilisation de la configuration surcharge : file:C:\Users\fuchs\log4j.properties
+16:44:04,708 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:44:04,739 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador 'AmbassadorForYou' instituated
+16:44:04,739 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:44:04,739 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:44:04,832 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:44:04,848 INFO  net.codjo.mad.client.plugin.InstituteAmbassadorInitiator - Ambassador cannot be created
+16:44:05,456 INFO  net.codjo.mad.client.request.RequestSender - > Envoie de 1 requete(s) au serveur deleteAll avec un timeout de 1000 ms
+16:44:05,472 INFO  net.codjo.mad.client.request.RequestSender - < Envoie de la requete au serveur (16 ms) 
+16:44:05,472 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:05,472 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<requests><audit><user>fuchs</user></audit><delete request_id="1"><id>deleteAll</id><primarykey><field name="id">5</field></primarykey></delete></requests>
+16:44:05,472 DEBUG net.codjo.mad.client.request.RequestSender - -----------------------------------------
+16:44:05,472 DEBUG net.codjo.mad.client.request.RequestSender - <?xml version="1.0"?>
+<results><result request_id="1" totalRowCount="1"><primarykey><field name="result"/></primarykey><row><field name="result">ok</field></row></result></results>
+16:44:05,472 DEBUG net.codjo.mad.client.request.RequestSender - *****************************************
+16:44:05,472 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:05,534 INFO  net.codjo.agent.imtp.NoConnectionIMTPManager - Demarrage du 'NoConnectionIMTPManager' : Communication intra-platform bloquee
+16:44:05,534 DEBUG net.codjo.mad.client.plugin.RequestInitiator - Décompression du message reçu en 0 ms
+16:44:05,628 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 0 ms
+16:44:05,644 DEBUG net.codjo.mad.client.request.ResultFactory - Désérialisation du xml réalisée en 16 ms

@@ -49,7 +49,9 @@ public abstract class AbstractAction extends AbstractGuiAction {
             frame = buildFrame(getGuiContext());
             frame.addInternalFrameListener(cleanUpListener);
             getDesktopPane().add(frame);
-            frame.setFrameIcon(UIManager.getIcon("icon"));
+            if (frame.getFrameIcon() == null){
+                frame.setFrameIcon(UIManager.getIcon("icon"));
+            }
             frame.pack();
             frame.setVisible(true);
             frame.setSelected(true);
