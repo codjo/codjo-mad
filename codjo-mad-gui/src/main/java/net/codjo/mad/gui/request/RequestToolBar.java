@@ -409,13 +409,14 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
         if (button != null) {
             button.setAction(newAction);
             button.setText(null);
-            button.setName(table.getName() + ".repB."
-                           + newAction.getClass().getName());
+            translationNotifier.addInternationalizableComponent(button,
+                                                                null,
+                                                                oldAction.getClass().getName() + ".tooltip");
+            button.setName(table.getName() + ".repB." + newAction.getClass().getName());
         }
         if (menuItem != null) {
             menuItem.setAction(newAction);
-            menuItem.setName(table.getName() + ".repM."
-                             + newAction.getClass().getName());
+            menuItem.setName(table.getName() + ".repM." + newAction.getClass().getName());
         }
     }
 

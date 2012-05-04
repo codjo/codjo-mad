@@ -1,4 +1,0 @@
-16:44:55,333 DEBUG net.codjo.i18n.gui.TranslationNotifier - objects = 2    components = 9
-16:44:55,333 DEBUG net.codjo.i18n.gui.TranslationNotifier - objects = 2    components = 10
-16:44:55,489 DEBUG net.codjo.i18n.gui.TranslationNotifier - objects = 0    components = 0
-16:44:55,489 ERROR net.codjo.mad.gui.framework.DefaultGuiContext - {}
