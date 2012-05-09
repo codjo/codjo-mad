@@ -1,24 +1,4 @@
 package net.codjo.mad.gui.request;
-import net.codjo.i18n.gui.TranslationNotifier;
-import net.codjo.mad.gui.framework.GuiContext;
-import net.codjo.mad.gui.i18n.InternationalizationUtil;
-import net.codjo.mad.gui.request.Position.Type;
-import net.codjo.mad.gui.request.action.AddAction;
-import net.codjo.mad.gui.request.action.DeleteAction;
-import net.codjo.mad.gui.request.action.DetailWindowBuilder;
-import net.codjo.mad.gui.request.action.EditAction;
-import net.codjo.mad.gui.request.action.EnableStateUpdater;
-import net.codjo.mad.gui.request.action.ExportAllPagesAction;
-import net.codjo.mad.gui.request.action.FatherContainer;
-import net.codjo.mad.gui.request.action.NextPageAction;
-import net.codjo.mad.gui.request.action.PreviousPageAction;
-import net.codjo.mad.gui.request.action.ReloadAction;
-import net.codjo.mad.gui.request.action.SubmitAction;
-import net.codjo.mad.gui.request.event.DataSourceEvent;
-import net.codjo.mad.gui.request.event.DataSourceListener;
-import net.codjo.mad.gui.request.requetor.ClearAction;
-import net.codjo.mad.gui.request.requetor.FindAction;
-import net.codjo.mad.gui.request.undo.DataSourceUndoManager;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -44,10 +24,31 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
+import net.codjo.i18n.gui.InternationalizableJLabel;
+import net.codjo.i18n.gui.TranslationNotifier;
+import net.codjo.mad.gui.framework.GuiContext;
+import net.codjo.mad.gui.i18n.InternationalizationUtil;
+import net.codjo.mad.gui.request.Position.Type;
+import net.codjo.mad.gui.request.action.AddAction;
+import net.codjo.mad.gui.request.action.DeleteAction;
+import net.codjo.mad.gui.request.action.DetailWindowBuilder;
+import net.codjo.mad.gui.request.action.EditAction;
+import net.codjo.mad.gui.request.action.EnableStateUpdater;
+import net.codjo.mad.gui.request.action.ExportAllPagesAction;
+import net.codjo.mad.gui.request.action.FatherContainer;
+import net.codjo.mad.gui.request.action.NextPageAction;
+import net.codjo.mad.gui.request.action.PreviousPageAction;
+import net.codjo.mad.gui.request.action.ReloadAction;
+import net.codjo.mad.gui.request.action.SubmitAction;
+import net.codjo.mad.gui.request.event.DataSourceEvent;
+import net.codjo.mad.gui.request.event.DataSourceListener;
+import net.codjo.mad.gui.request.requetor.ClearAction;
+import net.codjo.mad.gui.request.requetor.FindAction;
+import net.codjo.mad.gui.request.undo.DataSourceUndoManager;
 
 public class RequestToolBar extends JToolBar implements FatherContainer {
-    private static final String REQUETOR_EMPTY_REQUEST = "Aucun critère de recherche n'a été défini.";
-    private static final String REQUETOR_EMPTY_RESULT = "La recherche n'a renvoyé aucun résultat.";
+    private static final String REQUETOR_EMPTY_REQUEST = "RequestToolBar.requetorEmptyRequest";
+    private static final String REQUETOR_EMPTY_RESULT = "RequestToolBar.requetorEmptyResult";
     private static final String NAME_EXTENSION = ".ToolBar";
 
     public static final String ACTION_ADD = "AddAction";
@@ -81,6 +82,7 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
     private RequestRecordCountField requestRecordCountField = new RequestRecordCountField();
     private RequestRecordNavigator requestRecordNavigator = new RequestRecordNavigator();
     private TranslationNotifier translationNotifier;
+    private InternationalizableJLabel i18nRequetorStatus;
 
 
     public RequestToolBar() {
@@ -161,16 +163,16 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
     /**
      * Connecte cette toolbar à une table père.
      *
-     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de
-     * plus les écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row
-     * contenant les data sélectionnées dans la table père. </p>
+     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de plus les
+     * écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row contenant les data
+     * sélectionnées dans la table père. </p>
      *
      * @param father          la table père.
      * @param joinKey         La nouvelle valeur de father
      * @param selectHandlerId Identifiant du handler de select
      * @param guiContext      Contexte
      *
-     * @deprecated utiliser la version {@link #setFather(DataSource,JoinKeys)}
+     * @deprecated utiliser la version {@link #setFather(DataSource, JoinKeys)}
      */
     @Deprecated
     public void setFather(RequestTable father,
@@ -187,9 +189,9 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
     /**
      * Connecte cette toolbar à une table père.
      *
-     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de
-     * plus les écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row
-     * contenant les data sélectionnées dans la table père. </p>
+     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de plus les
+     * écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row contenant les data
+     * sélectionnées dans la table père. </p>
      *
      * @param father   la table père.
      * @param joinKeys La clef de jointure
@@ -209,9 +211,9 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
     /**
      * Connecte cette toolbar à une table père.
      *
-     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de
-     * plus les écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row
-     * contenant les data sélectionnées dans la table père. </p>
+     * <p> Si aucune ligne n'est sélectionner dans la table père alors toutes les actions sont disabled, de plus les
+     * écran détail ouvert doivent posséder deux arguments : (1) DetailDataSource et (2) une Row contenant les data
+     * sélectionnées dans la table père. </p>
      *
      * @param datalink Le lien entre le pere et le fils
      *
@@ -301,6 +303,9 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
         requestRecordNavigator.initialize(requestTable, guiContext);
         requestRecordCountField.initialize(requestTable, guiContext);
         translationNotifier.addInternationalizable(requestRecordCountField);
+
+        i18nRequetorStatus = new InternationalizableJLabel(REQUETOR_EMPTY_REQUEST, requetorStatus);
+        translationNotifier.addInternationalizableComponent(i18nRequetorStatus);
 
         repaint();
     }
@@ -404,13 +409,14 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
         if (button != null) {
             button.setAction(newAction);
             button.setText(null);
-            button.setName(table.getName() + ".repB."
-                           + newAction.getClass().getName());
+            translationNotifier.addInternationalizableComponent(button,
+                                                                null,
+                                                                oldAction.getClass().getName() + ".tooltip");
+            button.setName(table.getName() + ".repB." + newAction.getClass().getName());
         }
         if (menuItem != null) {
             menuItem.setAction(newAction);
-            menuItem.setName(table.getName() + ".repM."
-                             + newAction.getClass().getName());
+            menuItem.setName(table.getName() + ".repM." + newAction.getClass().getName());
         }
     }
 
@@ -539,7 +545,7 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
     JMenuItem getMenuItemInPopUpMenu(Action action) {
         for (int i = 0; i < getPopupMenu().getComponentCount(); i++) {
             Component comp = getPopupMenu().getComponent(i);
-            if (comp instanceof JMenuItem && ((JMenuItem) comp).getAction() == action) {
+            if (comp instanceof JMenuItem && ((JMenuItem)comp).getAction() == action) {
                 return (JMenuItem)comp;
             }
         }
@@ -691,8 +697,10 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
                 }
             }
             if (-1 == positionIndex) {
-                throw new IllegalArgumentException(String.format("Cannot add action %s because the action %s is not in popup",
-                                                                 menuItem.getName(), position.getActionName()));
+                throw new IllegalArgumentException(String.format(
+                      "Cannot add action %s because the action %s is not in popup",
+                      menuItem.getName(),
+                      position.getActionName()));
             }
 
             switch (positionType) {
@@ -819,11 +827,14 @@ public class RequestToolBar extends JToolBar implements FatherContainer {
 
     private class MyDataSourceListener implements DataSourceListener {
         public void loadEvent(DataSourceEvent event) {
+            translationNotifier.removeInternationalizable(i18nRequetorStatus);
             if (table.getDataSource().getLoadFactory() == null) {
-                requetorStatus.setText(REQUETOR_EMPTY_REQUEST);
+                i18nRequetorStatus = new InternationalizableJLabel(REQUETOR_EMPTY_REQUEST, requetorStatus);
+                translationNotifier.addInternationalizableComponent(i18nRequetorStatus);
             }
             else if (table.getDataSource().getRowCount() == 0) {
-                requetorStatus.setText(REQUETOR_EMPTY_RESULT);
+                i18nRequetorStatus = new InternationalizableJLabel(REQUETOR_EMPTY_RESULT, requetorStatus);
+                translationNotifier.addInternationalizableComponent(i18nRequetorStatus);
             }
             else {
                 requetorStatus.setText("");

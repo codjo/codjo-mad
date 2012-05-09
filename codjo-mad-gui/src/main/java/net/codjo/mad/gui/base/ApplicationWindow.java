@@ -1,4 +1,5 @@
 package net.codjo.mad.gui.base;
+import javax.swing.LookAndFeel;
 import net.codjo.gui.toolkit.progressbar.ProgressBarLabel;
 import net.codjo.i18n.common.Language;
 import net.codjo.i18n.common.TranslationManager;
@@ -179,11 +180,18 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
     private void configureLookAndFeel() {
         UIManager.put(Options.USE_SYSTEM_FONTS_APP_KEY, Boolean.TRUE);
         Plastic3DLookAndFeel.setCurrentTheme(new ExperienceBlue());
-        try {
-            UIManager.setLookAndFeel(new Plastic3DLookAndFeel());
-        }
-        catch (UnsupportedLookAndFeelException e) {
-            LOGGER.warn("Erreur lors de l'initialisation de JGoodies.", e);
+
+        LookAndFeel oldLF = UIManager.getLookAndFeel();
+        Class<? extends LookAndFeel> oldLfClass = (oldLF == null) ? null : oldLF.getClass();
+        if ((oldLfClass == null) || !oldLfClass.equals(Plastic3DLookAndFeel.class)) {
+            try {
+                UIManager.setLookAndFeel(new Plastic3DLookAndFeel());
+            }
+            catch (UnsupportedLookAndFeelException e) {
+                LOGGER.warn("Erreur lors de l'initialisation de JGoodies.", e);
+            }
+        } else {
+            LOGGER.warn("Look&Feel déjà initialisé à " + oldLfClass);
         }
 
         // Nécessaire lorsque un Editor Combo se trouve sur une table, cf :
