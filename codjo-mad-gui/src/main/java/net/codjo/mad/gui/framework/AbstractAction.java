@@ -1,4 +1,5 @@
 package net.codjo.mad.gui.framework;
+import javax.swing.Icon;
 import net.codjo.gui.toolkit.util.ErrorDialog;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyVetoException;
@@ -49,7 +50,7 @@ public abstract class AbstractAction extends AbstractGuiAction {
             frame = buildFrame(getGuiContext());
             frame.addInternalFrameListener(cleanUpListener);
             getDesktopPane().add(frame);
-            frame.setFrameIcon(UIManager.getIcon("icon"));
+            frame.setFrameIcon(getDefaultFrameIcon());
             frame.pack();
             frame.setVisible(true);
             frame.setSelected(true);
@@ -60,6 +61,10 @@ public abstract class AbstractAction extends AbstractGuiAction {
         }
     }
 
+
+    protected Icon getDefaultFrameIcon() {
+        return UIManager.getIcon("icon");
+    }
 
     protected void closeFrame() {
         if (frame != null) {
