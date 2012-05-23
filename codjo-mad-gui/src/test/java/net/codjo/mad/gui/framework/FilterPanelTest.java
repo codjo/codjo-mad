@@ -1,4 +1,9 @@
 package net.codjo.mad.gui.framework;
+import java.sql.Date;
+import java.util.Arrays;
+import java.util.Calendar;
+import javax.swing.JComboBox;
+import junit.framework.Assert;
 import net.codjo.gui.toolkit.date.DateField;
 import net.codjo.mad.client.request.MadServerFixture;
 import net.codjo.mad.client.request.MadServerFixture.WrapperMock;
@@ -7,10 +12,6 @@ import net.codjo.mad.gui.request.Preference;
 import net.codjo.mad.gui.request.RequestTable;
 import net.codjo.mad.gui.request.factory.SelectFactory;
 import net.codjo.security.common.api.UserMock;
-import java.sql.Date;
-import java.util.Arrays;
-import javax.swing.JComboBox;
-import junit.framework.Assert;
 import org.uispec4j.Button;
 import org.uispec4j.ComboBox;
 import org.uispec4j.Panel;
@@ -22,6 +23,7 @@ public class FilterPanelTest extends UISpecTestCase {
     private FilterPanel filterPanel;
     private MadServerFixture fixture = new MadServerFixture();
     private Button searchButton;
+    private Button clearButton;
     private static final String[] COLUMNS_NAMES = new String[]{"name", "address", "zipCode", "city"};
 
 
@@ -53,6 +55,41 @@ public class FilterPanelTest extends UISpecTestCase {
                            new String[][]{{"Leonard H. McCoy", "Le Lido", "75008", "FR1"},
                                           {"Montgomery Scott", "Le Lido", "75008", "FR1"}},
                            cityComboBox, "Paris", 2);
+    }
+
+
+    public void test_clearButtonFilter() throws Exception {
+        initDataFilter();
+        filterPanel.addDateFilter("Date", "dateFilter", "date");
+
+        filterPanel.setWithClearButton(true);
+        Panel panel = new Panel(filterPanel);
+
+        TextBox nameFilter = panel.getTextBox("nameFilter");
+        JComboBox zipComboBox = (JComboBox)filterPanel.getFilter("zipCodeFilter");
+        DateField dateField = (DateField)filterPanel.getFilter("dateFilter");
+
+        nameFilter.setText("Toto");
+        zipComboBox.setSelectedIndex(3);
+        java.util.Date date = Calendar.getInstance().getTime();
+        dateField.setDate(date);
+
+        Assert.assertEquals("Toto", nameFilter.getText());
+        Assert.assertEquals(3, zipComboBox.getSelectedIndex());
+        Assert.assertEquals(date, dateField.getDate());
+        assertEquals(0, requestTable.getRowCount());
+
+        fixture.mockServerResult(COLUMNS_NAMES, new String[][]{
+              {"James T. Kirk", "NGC 1701 Enterprise", "Narita", "JP1"},
+              {"Spock", "Vulcan Gentleman's Club", "ZA98", "UK1"},
+              {"Leonard H. McCoy", "Le Lido", "75008", "FR1"},
+              {"Montgomery Scott", "Le Lido", "75008", "FR1"}
+        });
+        clearButton.click();
+        assertEquals(4, requestTable.getRowCount());
+        Assert.assertEquals("", nameFilter.getText());
+        Assert.assertEquals(0, zipComboBox.getSelectedIndex());
+        Assert.assertEquals(null, dateField.getDate());
     }
 
 
@@ -315,6 +352,7 @@ public class FilterPanelTest extends UISpecTestCase {
 
         filterPanel = new FilterPanel(requestTable);
         searchButton = new Panel(filterPanel).getButton("searchButton");
+        clearButton = new Panel(filterPanel).getButton("clearButton");
     }
 
 

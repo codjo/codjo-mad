@@ -1,16 +1,4 @@
 package net.codjo.mad.gui.framework;
-import net.codjo.gui.toolkit.date.DateField;
-import net.codjo.gui.toolkit.util.ErrorDialog;
-import net.codjo.gui.toolkit.waiting.WaitingPanel;
-import net.codjo.mad.client.request.FieldsList;
-import net.codjo.mad.client.request.RequestException;
-import net.codjo.mad.gui.request.ListDataSource;
-import net.codjo.mad.gui.request.RequestComboBox;
-import net.codjo.mad.gui.request.RequestTable;
-import net.codjo.mad.gui.request.factory.RequestFactory;
-import net.codjo.mad.gui.request.wrapper.GuiWrapper;
-import net.codjo.mad.gui.request.wrapper.GuiWrapperFactory;
-import net.codjo.mad.gui.request.wrapper.UnsupportedComponentException;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,6 +27,18 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import net.codjo.gui.toolkit.date.DateField;
+import net.codjo.gui.toolkit.util.ErrorDialog;
+import net.codjo.gui.toolkit.waiting.WaitingPanel;
+import net.codjo.mad.client.request.FieldsList;
+import net.codjo.mad.client.request.RequestException;
+import net.codjo.mad.gui.request.ListDataSource;
+import net.codjo.mad.gui.request.RequestComboBox;
+import net.codjo.mad.gui.request.RequestTable;
+import net.codjo.mad.gui.request.factory.RequestFactory;
+import net.codjo.mad.gui.request.wrapper.GuiWrapper;
+import net.codjo.mad.gui.request.wrapper.GuiWrapperFactory;
+import net.codjo.mad.gui.request.wrapper.UnsupportedComponentException;
 public class FilterPanel extends JPanel {
     private RequestTable requestTable;
     private WaitingPanel waitingPanel;
@@ -65,7 +65,9 @@ public class FilterPanel extends JPanel {
         }
     };
     private boolean withSearchButton = true;
+    private boolean withClearButton = false;
     private JButton searchButton = new JButton("Afficher");
+    private JButton clearButton = new JButton("Intialiser");
     private boolean filteringMutex = false;
     private boolean postponedLoad = false;
 
@@ -80,11 +82,19 @@ public class FilterPanel extends JPanel {
         setWaitingPanel(waitingPanel);
 
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
-
+        clearButton.setVisible(false);
         this.searchButton.setName("searchButton");
+        this.clearButton.setName("clearButton");
         this.searchButton.addActionListener(this.reloadActionListener);
+        this.clearButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                clearFilters();
+                reload();
+            }
+        });
         Box box = Box.createHorizontalBox();
         box.add(searchButton);
+        box.add(clearButton);
         box.add(Box.createHorizontalGlue());
         add(box);
     }
@@ -109,6 +119,21 @@ public class FilterPanel extends JPanel {
     }
 
 
+    public void setWithClearButton(boolean with) {
+        if (withClearButton == with) {
+            return;
+        }
+        else if (!with) {
+            clearButton.setVisible(false);
+        }
+        else {
+            clearButton.setVisible(true);
+        }
+
+        withClearButton = with;
+    }
+
+
     public boolean isLoadPostponed() {
         return postponedLoad;
     }
@@ -116,8 +141,8 @@ public class FilterPanel extends JPanel {
 
     /**
      * Set to <code>false</code> to prevent load of <code>RequestComboBox</code> filters when {@link
-     * #addComboFilter(String, String, String, String, boolean, String)} is called. If value is later on
-     * changed to <code>true</code>, performs the load on every <code>RequestComboBox</code> filter itself.
+     * #addComboFilter(String, String, String, String, boolean, String)} is called. If value is later on changed to
+     * <code>true</code>, performs the load on every <code>RequestComboBox</code> filter itself.
      *
      * @param postpone flag to change load behavior of <code>RequestComboBox</code> filters
      */
@@ -196,11 +221,35 @@ public class FilterPanel extends JPanel {
                 });
             }
             else {
-                runInWaitingPanel(new Runnable() {
-                    public void run() {
-                        search();
-                    }
-                });
+                reload();
+            }
+        }
+    }
+
+
+    public void reload() {
+        runInWaitingPanel(new Runnable() {
+            public void run() {
+                search();
+            }
+        });
+    }
+
+
+    public void clearFilters() {
+        for (GuiWrapper guiWrapper : filterMap.values()) {
+            JComponent filter = guiWrapper.getGuiComponent();
+            if (filter instanceof RequestComboBox) {
+                RequestComboBox comboBox = (RequestComboBox)filter;
+                if (comboBox.getDataSource().getRowCount() > 0) {
+                    comboBox.setSelectedIndex(0);
+                }
+            }
+            else if (filter instanceof JTextField) {
+                ((JTextField)filter).setText("");
+            }
+            else if (filter instanceof DateField) {
+                ((DateField)filter).setDate(null);
             }
         }
     }
@@ -306,9 +355,21 @@ public class FilterPanel extends JPanel {
     }
 
 
+    public JButton getClearButton() {
+        return clearButton;
+    }
+
+
     public void setSearchButtonLabel(String label) {
         if (withSearchButton) {
             searchButton.setText(label);
+        }
+    }
+
+
+    public void setClearButtonLabel(String label) {
+        if (withClearButton) {
+            clearButton.setText(label);
         }
     }
 
