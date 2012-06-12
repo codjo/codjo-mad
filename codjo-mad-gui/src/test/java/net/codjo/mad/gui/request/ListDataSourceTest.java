@@ -517,6 +517,29 @@ public class ListDataSourceTest extends TestCase {
         assertEquals("toto", dataSource.getValueAt(0, "pimsCode"));
     }
 
+     public void test_save_QueryWithEmptyResult() throws Exception {
+        dataSource.setDeleteFactoryId("deleteStuff");
+        dataSource.setUpdateFactoryId("updateStuff");
+        dataSource.setInsertFactoryId("insertStuff");
+
+        // Ajout
+        Row newRow = new Row();
+        newRow.addField("pimsCode", "new");
+        dataSource.addRow(newRow);
+
+        // Simulation envoie au serveur
+        MockMultiRequestsHelper mrh = new MockMultiRequestsHelper();
+        dataSource.addSaveRequestTo(mrh);
+        assertEquals("insertStuff,", mrh.submitQuery);
+        RequestSubmiter insertStuffSubmiter = mrh.getSubmiters().get(0);
+
+        // Simulation retour serveur sans result du handler
+        insertStuffSubmiter.setResult(new Result());
+
+        // Assert
+        assertEquals("new", dataSource.getValueAt(0, "pimsCode"));
+    }
+
 
     /**
      * Test qu'aucune requete n'est faite si il n'y a pas de modification en cours.
