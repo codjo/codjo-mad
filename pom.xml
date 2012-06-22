@@ -13,7 +13,7 @@
     </parent>
     <groupId>net.codjo.mad</groupId>
     <artifactId>codjo-mad</artifactId>
-    <version>3.169-SNAPSHOT</version>
+    <version>3.169</version>
     <dependencyManagement>
         <dependencies>
             <dependency>
