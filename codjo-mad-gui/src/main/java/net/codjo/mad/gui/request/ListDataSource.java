@@ -1,4 +1,16 @@
 package net.codjo.mad.gui.request;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.CompoundEdit;
+import javax.swing.undo.UndoableEditSupport;
 import net.codjo.mad.client.request.FieldsList;
 import net.codjo.mad.client.request.Request;
 import net.codjo.mad.client.request.RequestException;
@@ -16,18 +28,6 @@ import net.codjo.mad.gui.request.undo.RemoveRowUndoableEdit;
 import net.codjo.mad.gui.request.undo.SnapshotEdit;
 import net.codjo.mad.gui.request.undo.UpdateRowUndoableEdit;
 import net.codjo.mad.gui.request.util.MultiRequestsHelper;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-import javax.swing.event.UndoableEditEvent;
-import javax.swing.event.UndoableEditListener;
-import javax.swing.undo.CompoundEdit;
-import javax.swing.undo.UndoableEditSupport;
 import org.apache.log4j.Logger;
 
 public class ListDataSource extends AbstractDataSource {
@@ -575,7 +575,9 @@ public class ListDataSource extends AbstractDataSource {
 
         public void setResult(Result result) {
             todoList.remove(row);
-            row.updateWith(result.getRow(0));
+            if (result.getRowCount() != 0) {
+                row.updateWith(result.getRow(0));
+            }
             if (!hasBeenUpdated()) {
                 fireSaveEvent(getLoadResult());
             }
@@ -593,7 +595,7 @@ public class ListDataSource extends AbstractDataSource {
 
         private FieldsList buildPrimaryKeyList() {
             FieldsList pks = new FieldsList();
-            for (Iterator i = loadResult.primaryKeys(); i.hasNext();) {
+            for (Iterator i = loadResult.primaryKeys(); i.hasNext(); ) {
                 String pkName = (String)i.next();
                 pks.addField(pkName, row.getFieldValue(pkName));
             }
