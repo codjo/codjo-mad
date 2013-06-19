@@ -19,9 +19,9 @@ net.codjo.mad.server.handler
 	-> net.codjo.mad.common
 	-> net.codjo.mad.server
 	-> net.codjo.mad.server.handler.aspect
-	-> net.codjo.mad.server.util
 	-> net.codjo.reflect.collect
 	-> net.codjo.security.common.api
+	-> net.codjo.util.time
 	-> org.exolab.castor.jdo
 	-> org.picocontainer
 	-> org.picocontainer.defaults
