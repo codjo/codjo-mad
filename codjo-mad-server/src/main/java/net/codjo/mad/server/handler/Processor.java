@@ -8,7 +8,8 @@ import net.codjo.aspect.AspectConfigException;
 import net.codjo.mad.common.Log;
 import net.codjo.mad.server.MadRequestContext;
 import net.codjo.mad.server.plugin.BackPack;
-import net.codjo.mad.server.util.Chronometer;
+import net.codjo.util.time.Chronometer;
+
 /**
  * Classe responsable de processing des requetes. Il marche par délegation sur des Handler.
  *

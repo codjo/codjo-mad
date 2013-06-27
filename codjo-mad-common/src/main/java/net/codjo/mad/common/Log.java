@@ -6,7 +6,10 @@ import org.apache.log4j.Logger;
 public final class Log {
     private static final Logger APP = Logger.getLogger(Log.class);
 
-    private Log() {}
+
+    private Log() {
+    }
+
 
     public static void debug(Object msg) {
         APP.debug(msg);
@@ -24,7 +27,7 @@ public final class Log {
 
 
     public static void error(Object msg, Throwable error) {
-        APP.debug(msg, error);
+        APP.error(msg, error);
     }
 
 
