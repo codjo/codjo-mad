@@ -1,4 +1,5 @@
 package net.codjo.mad.server.handler.sql;
+import java.sql.PreparedStatement;
 import net.codjo.database.api.DatabaseTesterFactory;
 import net.codjo.database.api.query.PreparedQuery;
 import net.codjo.database.common.api.JdbcFixture;
@@ -19,6 +20,7 @@ import java.sql.SQLException;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +31,8 @@ import org.xml.sax.InputSource;
 public class SqlHandlerTest {
     private JdbcFixture jdbc = JdbcFixture.newFixture();
     private HandlerContext handlerContext;
+
+    private static final Logger LOG = Logger.getLogger(SqlHandlerTest.class);
 
 
     @Before
@@ -71,6 +75,34 @@ public class SqlHandlerTest {
               + "</result>";
         XmlUtil.assertEquals(expectedResult,
                              executeHandler(new SelectAllSqlHandler(), request));
+    }
+
+
+    @Test
+    public void test_proceed_query() throws Exception {
+        String request = select("");
+
+        String expectedResult =
+              "<result request_id='1'  totalRowCount='1' >"
+              + "  <primarykey><field name='id'/></primarykey>"
+              + "  <row><field name='id'><![CDATA[2]]></field><field name='user'><![CDATA[user2]]></field><field name='value'><![CDATA[bla2]]></field></row>"
+              + "</result>";
+        XmlUtil.assertEquals(expectedResult,
+                             executeHandler(new FactoryQuerySqlHandler(), request));
+    }
+
+
+    @Test
+    public void test_proceed_statement() throws Exception {
+        String request = select("");
+
+        String expectedResult =
+              "<result request_id='1'  totalRowCount='1' >"
+              + "  <primarykey><field name='id'/></primarykey>"
+              + "  <row><field name='id'><![CDATA[1]]></field><field name='user'><![CDATA[user1]]></field><field name='value'><![CDATA[bla1]]></field></row>"
+              + "</result>";
+        XmlUtil.assertEquals(expectedResult,
+                             executeHandler(new FactoryStatementSqlHandler(), request));
     }
 
 
@@ -191,6 +223,80 @@ public class SqlHandlerTest {
         @Override
         public String getId() {
             return handlerId;
+        }
+    }
+
+    private class FactoryQuerySqlHandler extends SqlHandler {
+        private String handlerId = "defaultSqlHandlerId";
+
+
+        FactoryQuerySqlHandler() {
+            super(new String[]{"id"},
+                  "",
+                  DatabaseTesterFactory.create().createDatabase());
+
+            addGetter("id", new Getter(1));
+            addGetter("value", new Getter(2));
+            addGetter("user", new Getter(3));
+        }
+
+
+        @Override
+        protected void fillQuery(PreparedQuery query, Map<String, String> pks) {
+        }
+
+
+        @Override
+        public String getId() {
+            return handlerId;
+        }
+
+
+        @Override
+        protected String buildQuery(Map<String, String> arguments) throws HandlerException {
+            return "select ID, VALUE, USER_NAME from TEST where USER_NAME = 'user2'";
+        }
+    }
+
+    private class FactoryStatementSqlHandler extends SqlHandler {
+        private String handlerId = "defaultSqlHandlerId";
+
+
+        FactoryStatementSqlHandler() {
+            super(new String[]{"id"},
+                  "",
+                  DatabaseTesterFactory.create().createDatabase());
+
+            addGetter("id", new Getter(1));
+            addGetter("value", new Getter(2));
+            addGetter("user", new Getter(3));
+        }
+
+
+        @Override
+        protected void fillQuery(PreparedQuery query, Map<String, String> pks) {
+        }
+
+
+        @Override
+        public String getId() {
+            return handlerId;
+        }
+
+
+        @Override
+        protected PreparedStatement buildStatement(Map<String, String> arguments) throws HandlerException {
+            PreparedStatement statement = null;
+            String query = "select ID, VALUE, USER_NAME from TEST where USER_NAME = ?";
+            try {
+                statement = getConnection().prepareStatement(query);
+                statement.setString(1, "user1");
+            }
+            catch (SQLException e) {
+                LOG.info("Unable to create statement for query : " + query);
+            }
+
+            return statement;
         }
     }
 

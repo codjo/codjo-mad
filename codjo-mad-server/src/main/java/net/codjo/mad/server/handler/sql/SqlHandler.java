@@ -1,14 +1,4 @@
 package net.codjo.mad.server.handler.sql;
-import net.codjo.database.api.Database;
-import net.codjo.database.api.query.PreparedQuery;
-import net.codjo.database.api.query.PreparedSelectQuery;
-import net.codjo.database.api.query.SelectResult;
-import net.codjo.database.api.query.SqlAdapter;
-import net.codjo.mad.server.handler.AbstractHandler;
-import net.codjo.mad.server.handler.AbstractHandlerMapBuilder;
-import net.codjo.mad.server.handler.HandlerException;
-import net.codjo.mad.server.handler.XMLUtils;
-import net.codjo.mad.server.handler.util.QueryUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +9,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import net.codjo.database.api.Database;
+import net.codjo.database.api.query.PreparedQuery;
+import net.codjo.database.api.query.SelectResult;
+import net.codjo.database.api.query.SqlAdapter;
+import net.codjo.mad.server.handler.AbstractHandler;
+import net.codjo.mad.server.handler.AbstractHandlerMapBuilder;
+import net.codjo.mad.server.handler.HandlerException;
+import net.codjo.mad.server.handler.XMLUtils;
+import net.codjo.mad.server.handler.util.QueryUtil;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
@@ -30,7 +29,6 @@ public class SqlHandler extends AbstractHandler {
     private final String selectSqlQuery;
     private final boolean inTransaction;
     private final String headerPk;
-    private final Database database;
 
 
     protected SqlHandler(String[] pks, String selectQuery, Database database) {
@@ -44,7 +42,6 @@ public class SqlHandler extends AbstractHandler {
                          Database database) {
         this.selectSqlQuery = selectQuery;
         this.inTransaction = inTransaction;
-        this.database = database;
 
         primaryKeys.addAll(Arrays.asList(pks));
 
@@ -106,22 +103,29 @@ public class SqlHandler extends AbstractHandler {
     }
 
 
+    protected PreparedStatement buildStatement(Map<String, String> arguments) throws HandlerException {
+        return null;
+    }
+
+
     private String proceedSqlQuery(final Node node,
                                    final Map<String, String> arguments,
                                    final String[] propertyNames)
           throws SQLException, SAXException, HandlerException {
         Connection con = getConnection();
+        PreparedStatement statement = null;
+
         try {
-            final String sqlQuery = buildQuery(arguments);
-            APP.debug(sqlQuery);
-
             if (propertyNames.length > 0) {
-                PreparedSelectQuery selectQuery = database.preparedSelectQuery(con, sqlQuery);
-                selectQuery.setPage(XMLUtils.determinePage(node));
+                statement = initStatement(arguments);
+                fillQuery(SqlAdapter.wrap(statement), arguments);
 
-                fillQuery(selectQuery, arguments);
+                ResultSet resultSet = statement.executeQuery();
 
-                SelectResult results = selectQuery.execute();
+                SelectResult results = new SelectResult(resultSet,
+                                                        statement,
+                                                        SelectResult.UNDEFINED_TOTAL_ROW_COUNT,
+                                                        XMLUtils.determinePage(node));
 
                 StringBuffer response = new StringBuffer("");
                 while (results.next()) {
@@ -129,26 +133,33 @@ public class SqlHandler extends AbstractHandler {
                 }
                 results.close();
 
-                return buildResponseHeader(node, results.getTotalRowCount()) + response.append("</result>");
+                return buildResponseHeader(node, results.getTotalRowCount() - 1) + response.append("</result>");
             }
             else {
-                PreparedStatement statement = null;
-                try {
-                    statement = con.prepareStatement(sqlQuery);
-                    fillQuery(SqlAdapter.wrap(statement), arguments);
-                    statement.executeUpdate();
-                    return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
-                }
-                finally {
-                    if (statement != null) {
-                        statement.close();
-                    }
-                }
+                statement = initStatement(arguments);
+                fillQuery(SqlAdapter.wrap(statement), arguments);
+                statement.executeUpdate();
+                return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
             }
         }
         finally {
             con.close();
+            if (statement != null) {
+                statement.close();
+            }
         }
+    }
+
+
+    private PreparedStatement initStatement(Map<String, String> arguments) throws HandlerException, SQLException {
+        PreparedStatement statement;
+        statement = buildStatement(arguments);
+        if (statement == null) {
+            final String sqlQuery = buildQuery(arguments);
+            APP.debug(sqlQuery);
+            statement = getConnection().prepareStatement(sqlQuery);
+        }
+        return statement;
     }
 
 
