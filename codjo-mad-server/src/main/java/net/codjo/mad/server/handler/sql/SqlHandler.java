@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import net.codjo.database.api.Database;
 import net.codjo.database.api.query.PreparedQuery;
+import net.codjo.database.api.query.PreparedSelectQuery;
 import net.codjo.database.api.query.SelectResult;
 import net.codjo.database.api.query.SqlAdapter;
 import net.codjo.mad.server.handler.AbstractHandler;
@@ -29,6 +30,7 @@ public class SqlHandler extends AbstractHandler {
     private final String selectSqlQuery;
     private final boolean inTransaction;
     private final String headerPk;
+    private final Database database;
 
 
     protected SqlHandler(String[] pks, String selectQuery, Database database) {
@@ -42,6 +44,7 @@ public class SqlHandler extends AbstractHandler {
                          Database database) {
         this.selectSqlQuery = selectQuery;
         this.inTransaction = inTransaction;
+        this.database = database;
 
         primaryKeys.addAll(Arrays.asList(pks));
 
@@ -116,6 +119,41 @@ public class SqlHandler extends AbstractHandler {
         PreparedStatement statement = null;
 
         try {
+            if (selectSqlQuery != null && !"".equals(selectSqlQuery)) {
+                final String sqlQuery = buildQuery(arguments);
+                APP.debug(sqlQuery);
+
+                if (propertyNames.length > 0) {
+                    PreparedSelectQuery selectQuery = database.preparedSelectQuery(con, sqlQuery);
+                    selectQuery.setPage(XMLUtils.determinePage(node));
+
+                    fillQuery(selectQuery, arguments);
+
+                    SelectResult results = selectQuery.execute();
+
+                    StringBuffer response = new StringBuffer("");
+                    while (results.next()) {
+                        addRow(response, results, propertyNames);
+                    }
+                    results.close();
+
+                    return buildResponseHeader(node, results.getTotalRowCount()) + response.append("</result>");
+                }
+                else {
+                    try {
+                        statement = con.prepareStatement(sqlQuery);
+                        fillQuery(SqlAdapter.wrap(statement), arguments);
+                        statement.executeUpdate();
+                        return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
+                    }
+                    finally {
+                        if (statement != null) {
+                            statement.close();
+                        }
+                    }
+                }
+            }
+            else
             if (propertyNames.length > 0) {
                 statement = initStatement(arguments);
                 fillQuery(SqlAdapter.wrap(statement), arguments);
