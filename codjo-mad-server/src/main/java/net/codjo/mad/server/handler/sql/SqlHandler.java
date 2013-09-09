@@ -119,8 +119,8 @@ public class SqlHandler extends AbstractHandler {
         PreparedStatement statement = null;
 
         try {
-            if (selectSqlQuery != null && !"".equals(selectSqlQuery)) {
-                final String sqlQuery = buildQuery(arguments);
+            final String sqlQuery = buildQuery(arguments);
+            if (sqlQuery != null && !"".equals(sqlQuery)) {
                 APP.debug(sqlQuery);
 
                 if (propertyNames.length > 0) {
