@@ -78,6 +78,20 @@ public class SqlHandlerTest {
                              executeHandler(new SelectAllSqlHandler(), request));
     }
 
+    @Test
+    public void test_proceed_totalRowCountGreaterThanPageSize() throws Exception {
+        String request = select("<page num='1' rows='1'></page>");
+        SelectAllSqlHandler sqlHandler = new SelectAllSqlHandler();
+
+        String expectedResult =
+              "<result request_id='1'  totalRowCount='2' >"
+              + "  <primarykey><field name='id'/></primarykey>"
+              + "  <row><field name='id'><![CDATA[1]]></field><field name='user'><![CDATA[user1]]></field><field name='value'><![CDATA[bla1]]></field></row>"
+              + "</result>";
+        XmlUtil.assertEquals(expectedResult,
+                             executeHandler(sqlHandler, request));
+    }
+
 
     @Test
     public void test_proceed_query() throws Exception {
