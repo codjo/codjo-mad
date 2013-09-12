@@ -1,6 +1,5 @@
 package net.codjo.mad.server.handler.sql;
 import java.io.StringReader;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
@@ -23,7 +22,6 @@ import net.codjo.test.common.XmlUtil;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -78,6 +76,7 @@ public class SqlHandlerTest {
                              executeHandler(new SelectAllSqlHandler(), request));
     }
 
+
     @Test
     public void test_proceed_totalRowCountGreaterThanPageSize() throws Exception {
         String request = select("<page num='1' rows='1'></page>");
@@ -117,7 +116,7 @@ public class SqlHandlerTest {
               + "  <row><field name='id'><![CDATA[1]]></field><field name='user'><![CDATA[user1]]></field><field name='value'><![CDATA[bla1]]></field></row>"
               + "</result>";
         XmlUtil.assertEquals(expectedResult,
-                             executeHandler(new FactoryStatementSqlHandler(), request));
+                             executeHandler(new FactoryQueryWithParameterSqlHandler(), request));
     }
 
 
@@ -273,11 +272,11 @@ public class SqlHandlerTest {
         }
     }
 
-    private class FactoryStatementSqlHandler extends SqlHandler {
+    private class FactoryQueryWithParameterSqlHandler extends SqlHandler {
         private String handlerId = "defaultSqlHandlerId";
 
 
-        FactoryStatementSqlHandler() {
+        FactoryQueryWithParameterSqlHandler() {
             super(new String[]{"id"},
                   "",
                   DatabaseTesterFactory.create().createDatabase());
@@ -289,29 +288,20 @@ public class SqlHandlerTest {
 
 
         @Override
-        protected void fillQuery(PreparedQuery query, Map<String, String> pks) {
+        protected String buildQuery(Map<String, String> arguments) throws HandlerException {
+            return "select ID, VALUE, USER_NAME from TEST where USER_NAME = ?";
+        }
+
+
+        @Override
+        protected void fillQuery(PreparedQuery query, Map<String, String> pks) throws SQLException {
+            query.setString(1, "user1");
         }
 
 
         @Override
         public String getId() {
             return handlerId;
-        }
-
-
-        @Override
-        protected PreparedStatement buildStatement(Map<String, String> arguments) throws HandlerException {
-            PreparedStatement statement = null;
-            String query = "select ID, VALUE, USER_NAME from TEST where USER_NAME = ?";
-            try {
-                statement = getConnection().prepareStatement(query);
-                statement.setString(1, "user1");
-            }
-            catch (SQLException e) {
-                LOG.info("Unable to create statement for query : " + query);
-            }
-
-            return statement;
         }
     }
 

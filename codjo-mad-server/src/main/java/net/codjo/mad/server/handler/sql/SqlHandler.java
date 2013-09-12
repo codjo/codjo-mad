@@ -106,64 +106,22 @@ public class SqlHandler extends AbstractHandler {
     }
 
 
-    protected PreparedStatement buildStatement(Map<String, String> arguments) throws HandlerException {
-        return null;
-    }
-
-
     private String proceedSqlQuery(final Node node,
                                    final Map<String, String> arguments,
                                    final String[] propertyNames)
           throws SQLException, SAXException, HandlerException {
         Connection con = getConnection();
-        PreparedStatement statement = null;
-
         try {
             final String sqlQuery = buildQuery(arguments);
-            if (sqlQuery != null && !"".equals(sqlQuery)) {
-                APP.debug(sqlQuery);
+            APP.debug(sqlQuery);
 
-                if (propertyNames.length > 0) {
-                    PreparedSelectQuery selectQuery = database.preparedSelectQuery(con, sqlQuery);
-                    selectQuery.setPage(XMLUtils.determinePage(node));
-
-                    fillQuery(selectQuery, arguments);
-
-                    SelectResult results = selectQuery.execute();
-
-                    StringBuffer response = new StringBuffer("");
-                    while (results.next()) {
-                        addRow(response, results, propertyNames);
-                    }
-                    results.close();
-
-                    return buildResponseHeader(node, results.getTotalRowCount()) + response.append("</result>");
-                }
-                else {
-                    try {
-                        statement = con.prepareStatement(sqlQuery);
-                        fillQuery(SqlAdapter.wrap(statement), arguments);
-                        statement.executeUpdate();
-                        return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
-                    }
-                    finally {
-                        if (statement != null) {
-                            statement.close();
-                        }
-                    }
-                }
-            }
-            else
             if (propertyNames.length > 0) {
-                statement = initStatement(arguments);
-                fillQuery(SqlAdapter.wrap(statement), arguments);
+                PreparedSelectQuery selectQuery = database.preparedSelectQuery(con, sqlQuery);
+                selectQuery.setPage(XMLUtils.determinePage(node));
 
-                ResultSet resultSet = statement.executeQuery();
+                fillQuery(selectQuery, arguments);
 
-                SelectResult results = new SelectResult(resultSet,
-                                                        statement,
-                                                        SelectResult.UNDEFINED_TOTAL_ROW_COUNT,
-                                                        XMLUtils.determinePage(node));
+                SelectResult results = selectQuery.execute();
 
                 StringBuffer response = new StringBuffer("");
                 while (results.next()) {
@@ -171,33 +129,26 @@ public class SqlHandler extends AbstractHandler {
                 }
                 results.close();
 
-                return buildResponseHeader(node, results.getTotalRowCount() - 1) + response.append("</result>");
+                return buildResponseHeader(node, results.getTotalRowCount()) + response.append("</result>");
             }
             else {
-                statement = initStatement(arguments);
-                fillQuery(SqlAdapter.wrap(statement), arguments);
-                statement.executeUpdate();
-                return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
+                PreparedStatement statement = null;
+                try {
+                    statement = con.prepareStatement(sqlQuery);
+                    fillQuery(SqlAdapter.wrap(statement), arguments);
+                    statement.executeUpdate();
+                    return buildResponseHeader(node, statement.getUpdateCount()) + "</result>";
+                }
+                finally {
+                    if (statement != null) {
+                        statement.close();
+                    }
+                }
             }
         }
         finally {
             con.close();
-            if (statement != null) {
-                statement.close();
-            }
         }
-    }
-
-
-    private PreparedStatement initStatement(Map<String, String> arguments) throws HandlerException, SQLException {
-        PreparedStatement statement;
-        statement = buildStatement(arguments);
-        if (statement == null) {
-            final String sqlQuery = buildQuery(arguments);
-            APP.debug(sqlQuery);
-            statement = getConnection().prepareStatement(sqlQuery);
-        }
-        return statement;
     }
 
 
