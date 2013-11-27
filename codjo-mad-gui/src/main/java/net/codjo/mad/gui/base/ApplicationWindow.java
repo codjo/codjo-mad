@@ -9,6 +9,7 @@ import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.BorderFactory;
@@ -218,7 +219,7 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
                 public void run() {
                     try {
                         // Change context in all future threads
-                        final Field field = EventQueue.class.getDeclaredField(" classLoader ");
+                        final Field field = EventQueue.class.getDeclaredField("classLoader");
                         field.setAccessible(true);
                         final EventQueue eventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
                         field.set(eventQueue, classLoader);
@@ -231,8 +232,11 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
                 }
             });
         }
-        catch (Exception e) {
-            e.printStackTrace();
+        catch (InterruptedException e) {
+            e.printStackTrace();  // Todo
+        }
+        catch (InvocationTargetException e) {
+            e.printStackTrace();  // Todo
         }
     }
 
