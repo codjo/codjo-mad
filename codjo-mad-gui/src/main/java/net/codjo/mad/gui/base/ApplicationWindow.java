@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.BorderFactory;
@@ -227,16 +226,21 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
                         Thread.currentThread().setContextClassLoader(classLoader);
                     }
                     catch (Exception e) {
-                        LOGGER.error(" Unable to apply 'fix' for java web start 1.7u25 ", e);
+                        LOGGER.error(
+                              " Unable to apply 'fix' for java web start issue"
+                              + " \"JDK-8017776 : Swing Event Thread does not use JNLP class loader\" \n"
+                              + "(see: http://bugs.sun.com/view_bug.do?bug_id=8017776) ",
+                              e);
                     }
                 }
             });
         }
-        catch (InterruptedException e) {
-            e.printStackTrace();  // Todo
-        }
-        catch (InvocationTargetException e) {
-            e.printStackTrace();  // Todo
+        catch (Exception e) {
+            LOGGER.error(
+                  "Error while applying 'fix' for java web start issue"
+                  + " \"JDK-8017776 : Swing Event Thread does not use JNLP class loader\" \n"
+                  + "see http://bugs.sun.com/view_bug.do?bug_id=8017776",
+                  e);
         }
     }
 
