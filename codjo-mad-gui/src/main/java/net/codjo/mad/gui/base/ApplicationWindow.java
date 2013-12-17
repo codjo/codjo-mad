@@ -1,5 +1,29 @@
 package net.codjo.mad.gui.base;
+import com.jgoodies.looks.Options;
+import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
+import com.jgoodies.looks.plastic.theme.ExperienceBlue;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import java.lang.reflect.Field;
+import java.util.Observable;
+import java.util.Observer;
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.LookAndFeel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 import net.codjo.gui.toolkit.progressbar.ProgressBarLabel;
 import net.codjo.i18n.common.Language;
 import net.codjo.i18n.common.TranslationManager;
@@ -10,26 +34,6 @@ import net.codjo.mad.gui.framework.GuiContext;
 import net.codjo.mad.gui.framework.GuiEvent;
 import net.codjo.mad.gui.i18n.InternationalizationUtil;
 import net.codjo.mad.gui.util.ApplicationData;
-import com.jgoodies.looks.Options;
-import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
-import com.jgoodies.looks.plastic.theme.ExperienceBlue;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.event.WindowEvent;
-import java.util.Observable;
-import java.util.Observer;
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 import org.apache.log4j.Logger;
 
 class ApplicationWindow extends JFrame implements Observer, Internationalizable {
@@ -190,7 +194,8 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
             catch (UnsupportedLookAndFeelException e) {
                 LOGGER.warn("Erreur lors de l'initialisation de JGoodies.", e);
             }
-        } else {
+        }
+        else {
             LOGGER.warn("Look&Feel déjà initialisé à " + oldLfClass);
         }
 
@@ -199,6 +204,44 @@ class ApplicationWindow extends JFrame implements Observer, Internationalizable 
         UIManager.put("Table.selectionForeground", Color.WHITE);
         UIManager.put("Table.focusCellBackground", new JTable().getSelectionBackground());
         UIManager.put("Table.focusCellForeground", Color.WHITE);
+
+        hackClassLoaderIssueInWebstart();
+    }
+
+
+    private void hackClassLoaderIssueInWebstart() {
+        //HACK http://bugs.sun.com/view_bug.do?bug_id=8017776
+        // Since JWS 1.6.0_51 -->
+        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        try {
+            SwingUtilities.invokeAndWait(new Runnable() {
+                public void run() {
+                    try {
+                        // Change context in all future threads
+                        final Field field = EventQueue.class.getDeclaredField("classLoader");
+                        field.setAccessible(true);
+                        final EventQueue eventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
+                        field.set(eventQueue, classLoader);
+                        // Change context in this thread
+                        Thread.currentThread().setContextClassLoader(classLoader);
+                    }
+                    catch (Exception e) {
+                        LOGGER.error(
+                              " Unable to apply 'fix' for java web start issue"
+                              + " \"JDK-8017776 : Swing Event Thread does not use JNLP class loader\" \n"
+                              + "(see: http://bugs.sun.com/view_bug.do?bug_id=8017776) ",
+                              e);
+                    }
+                }
+            });
+        }
+        catch (Exception e) {
+            LOGGER.error(
+                  "Error while applying 'fix' for java web start issue"
+                  + " \"JDK-8017776 : Swing Event Thread does not use JNLP class loader\" \n"
+                  + "see http://bugs.sun.com/view_bug.do?bug_id=8017776",
+                  e);
+        }
     }
 
 
